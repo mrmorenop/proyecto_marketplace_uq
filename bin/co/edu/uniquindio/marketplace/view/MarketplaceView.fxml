@@ -1,0 +1,1887 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="818.0" prefWidth="1117.0" style="-fx-background-color: #CACACA;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.marketplace.controllers.MarketplaceViewController">
+   <children>
+      <TabPane fx:id="tabPaneGeneral" layoutY="43.0" prefHeight="794.0" prefWidth="1117.0" style="-fx-background-color: #CACACA;" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Administracion">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="721.0" prefWidth="889.0" style="-fx-background-color: #CACACA;">
+                     <children>
+                        <TabPane prefHeight="753.0" prefWidth="954.0" style="-fx-background-color: #1DEAD4;" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab text="Gestion de Vendedores">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="687.0" prefWidth="942.0" style="-fx-background-color: #CACACA;">
+                                       <children>
+                                          <Label layoutX="25.0" layoutY="29.0" text="Nombre: " />
+                                          <Label layoutX="25.0" layoutY="71.0" text="Apellido: " />
+                                          <Label layoutX="30.0" layoutY="114.0" text="Cédula:" />
+                                          <Label layoutX="24.0" layoutY="159.0" text="Dirección:" />
+                                          <TextField fx:id="txtNombreVendedorAdmin" layoutX="83.0" layoutY="25.0" prefHeight="25.0" prefWidth="794.0" />
+                                          <TextField fx:id="txtApellidoVendedorAdmin" layoutX="83.0" layoutY="67.0" prefHeight="25.0" prefWidth="794.0" />
+                                          <TextField fx:id="txtCedulaVendedorAdmin" layoutX="83.0" layoutY="110.0" prefHeight="25.0" prefWidth="795.0" />
+                                          <TextField fx:id="txtDireccionVendedorAdmin" layoutX="83.0" layoutY="155.0" prefHeight="25.0" prefWidth="795.0" />
+                                          <Label layoutX="15.0" layoutY="323.0" text="Lista de Vendedores:">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font></Label>
+                                          <Separator layoutX="-1.0" layoutY="299.0" prefHeight="13.0" prefWidth="909.0" />
+                                          <TableView fx:id="tableVendedoresAdmin" layoutX="80.0" layoutY="365.0" prefHeight="235.0" prefWidth="759.0" style="-fx-background-color: #4452F6;">
+                                            <columns>
+                                              <TableColumn fx:id="columnNombreVendedoresAdmin" prefWidth="185.0" text="Nombre" />
+                                              <TableColumn fx:id="columnApellidoVendedoresAdmin" prefWidth="148.0" text="Apellido" />
+                                                <TableColumn fx:id="columnCedulaVendedoresAdmin" prefWidth="196.0" text="Cedula" />
+                                                <TableColumn fx:id="columnDireccionVendedoresAdmin" prefWidth="229.0" text="Direccion" />
+                                            </columns>
+                                          </TableView>
+                                          <Button fx:id="btnNuevoVendedor" layoutX="132.0" layoutY="265.0" mnemonicParsing="false" onAction="#nuevoVendedorAction" style="-fx-background-color: #4452F6;" text="Nuevo Vendedor" textFill="WHITE" />
+                                          <Button fx:id="btnAgregarVendedor" layoutX="378.0" layoutY="265.0" mnemonicParsing="false" onAction="#agregarVendedorAction" style="-fx-background-color: #4452F6;" text="Agregar Vendedor" textFill="WHITE" />
+                                          <Button fx:id="btnActualizarVendedor" layoutX="656.0" layoutY="265.0" mnemonicParsing="false" onAction="#actualizarVendedorAction" style="-fx-background-color: #4452F6;" text="Actualizar Vendedor" textFill="WHITE" />
+                                          <Button fx:id="btnEliminarVendedor" layoutX="378.0" layoutY="624.0" mnemonicParsing="false" onAction="#eliminarVendedorAction" style="-fx-background-color: #4452F6;" text="Eliminar Vendedor" textFill="WHITE" />
+                                          <PasswordField fx:id="passTxtContraseñaVendedorAdmin" layoutX="83.0" layoutY="201.0" prefHeight="25.0" prefWidth="795.0" />
+                                          <Label layoutX="14.0" layoutY="205.0" text="Contraseña:" />
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                            <Tab text="Reportes">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #CACACA;">
+                                       <children>
+                                          <Button fx:id="btnExportarCantidadProductosPublicados" layoutX="126.0" layoutY="301.0" mnemonicParsing="false" onAction="#exportarCantidadProductosPublicadosAction" style="-fx-background-color: #4452F6;" text="Exportar" textFill="WHITE" />
+                                          <Button fx:id="btnExportarCantidadContactosVendedor" layoutX="128.0" layoutY="659.0" mnemonicParsing="false" onAction="#exportarCantidadContactosVendedorAction" style="-fx-background-color: #4452F6;" text="Exportar" textFill="WHITE" />
+                                          <GridPane gridLinesVisible="true" layoutX="38.0" layoutY="45.0" prefHeight="236.0" prefWidth="240.0">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="241.0" minWidth="10.0" prefWidth="231.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints maxHeight="113.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                                              <RowConstraints maxHeight="205.0" minHeight="10.0" prefHeight="205.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <Label alignment="CENTER" prefHeight="17.0" prefWidth="226.0" text="Vendedores: Cantidad" />
+                                                <Label fx:id="labelCantidadProductosPublicadosVendedores" prefHeight="200.0" prefWidth="238.0" text="Info" GridPane.rowIndex="1" />
+                                             </children>
+                                          </GridPane>
+                                          <Label layoutX="14.0" layoutY="14.0" text="Cantidad de productos publicados por los vendedores" />
+                                          <GridPane gridLinesVisible="true" layoutX="38.0" layoutY="401.0" prefHeight="236.0" prefWidth="240.0">
+                                             <children>
+                                                <Label alignment="CENTER" prefHeight="17.0" prefWidth="226.0" text="Vendedores: Cantidad" />
+                                                <Label fx:id="labelCantidadContactosVendedores" prefHeight="200.0" prefWidth="238.0" text="Info" GridPane.rowIndex="1" />
+                                             </children>
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="241.0" minWidth="10.0" prefWidth="231.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints maxHeight="113.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="205.0" minHeight="10.0" prefHeight="205.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                          </GridPane>
+                                          <Label layoutX="49.0" layoutY="368.0" text="Cantidad de contactos de los vendedores" />
+                                          <GridPane gridLinesVisible="true" layoutX="629.0" layoutY="401.0" prefHeight="236.0" prefWidth="240.0">
+                                             <children>
+                                                <Label alignment="CENTER" prefHeight="17.0" prefWidth="226.0" text="Producto: Cantidad de likes" />
+                                                <Label fx:id="labelTop10ProductosMasLikeados" prefHeight="200.0" prefWidth="238.0" text="Info" GridPane.rowIndex="1" />
+                                             </children>
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="241.0" minWidth="10.0" prefWidth="231.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints maxHeight="113.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="205.0" minHeight="10.0" prefHeight="205.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                          </GridPane>
+                                          <Label layoutX="649.0" layoutY="368.0" text="Top 10 de los productos mas likeados" />
+                                          <Button fx:id="btnExportarTop10ProductosMasLikeados" layoutX="719.0" layoutY="659.0" mnemonicParsing="false" onAction="#exportarTop10ProductosMasLikeadosAction" style="-fx-background-color: #4452F6;" text="Exportar" textFill="WHITE" />
+                                          <Button fx:id="btnActualizarEstadisticasAdmin" layoutX="808.0" layoutY="10.0" mnemonicParsing="false" onAction="#actualizarEstadisticasAdminAction" style="-fx-background-color: #4452F6;" text="Actualizar estadisticas" textFill="WHITE" />
+                                       </children></AnchorPane>
+                              </content>
+                            </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Vendedor 1">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="942.0">
+                     <children>
+                        <AnchorPane layoutX="2.0" layoutY="2.0" prefHeight="764.0" prefWidth="1117.0">
+                           <children>
+                              <Label layoutX="11.0" layoutY="2.0" prefHeight="17.0" prefWidth="77.0" text="Vendedor 1:">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <TabPane layoutX="673.0" layoutY="412.0" prefHeight="333.0" prefWidth="416.0" tabClosingPolicy="UNAVAILABLE">
+                                <tabs>
+                                  <Tab text="Lista de contactos">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TableView fx:id="tableContactosVendedor1" layoutX="61.0" layoutY="39.0" prefHeight="177.0" prefWidth="305.0" style="-fx-background-color: #4452F6;">
+                                                  <columns>
+                                                    <TableColumn fx:id="columnNombreContactosVendedor1" minWidth="0.0" prefWidth="151.0" text="Nombre" />
+                                                    <TableColumn fx:id="columnApellidoContactosVendedor1" prefWidth="147.0" text="Apellido" />
+                                                  </columns>
+                                                </TableView>
+                                                <Button fx:id="btnEliminarContactoVendedor1" layoutX="147.0" layoutY="248.0" mnemonicParsing="false" onAction="#eliminarContactoVendedor1Action" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #4452F6;" text="Eliminar Contacto" textFill="WHITE" />
+                                             </children>
+                                          </AnchorPane>
+                                    </content>
+                                  </Tab>
+                                    <Tab text="Sugerencia de contactos">
+                                      <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <Button fx:id="btnAgregarContactoSugerido1" layoutX="150.0" layoutY="248.0" mnemonicParsing="false" onAction="#agregarContactoSugeridoAction1" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #4452F6;" text="Agregar Contacto" textFill="WHITE" />
+                                                <TableView fx:id="tableSugeridosVendedor1" layoutX="67.0" layoutY="41.0" prefHeight="177.0" prefWidth="299.0" style="-fx-background-color: #4452F6;">
+                                                   <columns>
+                                                      <TableColumn fx:id="columnNombreSugeridosVendedor1" minWidth="0.0" prefWidth="150.0" text="Nombre" />
+                                                      <TableColumn fx:id="columnApellidoSugeridosVendedor1" prefWidth="139.0" text="Apellido" />
+                                                   </columns>
+                                                </TableView>
+                                             </children>
+                                          </AnchorPane>
+                                      </content>
+                                    </Tab>
+                                    <Tab text="Búsqueda de contactos">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TableView fx:id="tableBusquedaContactos1" layoutX="62.0" layoutY="64.0" prefHeight="177.0" prefWidth="293.0" style="-fx-background-color: #4452F6;">
+                                                   <columns>
+                                                      <TableColumn fx:id="columnNombreContactoBusqueda1" minWidth="0.0" prefWidth="144.0" text="Nombre" />
+                                                      <TableColumn fx:id="columnApellidoContactoBusqueda1" prefWidth="135.0" text="Apellido" />
+                                                   </columns>
+                                                </TableView>
+                                                <TextField fx:id="txtBuscarVendedor1" layoutX="138.0" layoutY="17.0" prefHeight="25.0" prefWidth="182.0" />
+                                                <Button fx:id="btnBuscarVendedor1" layoutX="338.0" layoutY="17.0" mnemonicParsing="false" onAction="#buscarVendedor1Action" prefHeight="25.0" prefWidth="57.0" style="-fx-background-color: #4452F6;" text="Buscar" textFill="WHITE" />
+                                                <Label layoutX="7.0" layoutY="21.0" text="Buscar vendedores:">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Button fx:id="btnAgregarContactoBusqueda1" layoutX="142.0" layoutY="258.0" mnemonicParsing="false" onAction="#agregarContactoBusquedaAction1" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #4452F6;" text="Agregar Contacto" textFill="WHITE" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                </tabs>
+                              </TabPane>
+                              <Label layoutX="10.0" layoutY="356.0" text="Informacion productos">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="26.0" prefHeight="26.0" prefWidth="185.0" text="Lista de publicaciones">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <TableView fx:id="tablePublicacionesVendedor1" layoutX="27.0" layoutY="85.0" prefHeight="214.0" prefWidth="657.0" style="-fx-background-color: #4452F6;">
+                                <columns>
+                                  <TableColumn fx:id="columnFechaPublicacionVendedor1" prefWidth="130.0" text="Fecha publicacion" />
+                                  <TableColumn fx:id="columnNombreProductoPublicacionVendedor1" prefWidth="223.0" text="Nombre" />
+                                    <TableColumn fx:id="columnPrecioProductoPublicacionVendedor1" minWidth="0.0" prefWidth="231.0" text="Precio" />
+                                    <TableColumn fx:id="columnLikesVendedor1" prefWidth="64.0" text="Likes" />
+                                </columns>
+                              </TableView>
+                              <Button fx:id="btnLikePublicacionVendedor1" layoutX="569.0" layoutY="312.0" mnemonicParsing="false" onAction="#likePublicacionVendedor1Action" prefHeight="25.0" prefWidth="79.0" style="-fx-background-color: #4452F6;" text="Me gusta" textFill="WHITE" />
+                              <TextField fx:id="txtComentarioPublicacionVendedor1" layoutX="754.0" layoutY="115.0" prefHeight="42.0" prefWidth="346.0" promptText="Agregue un comentario aqui..." />
+                              <Button fx:id="btnAgregarComentarioPublicacionVendedor1" layoutX="863.0" layoutY="167.0" mnemonicParsing="false" onAction="#agregarComentarioPublicacionVendedor1" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #4452F6;" text="Agregar Comentario" textFill="WHITE" />
+                              <Separator layoutX="-3.0" layoutY="340.0" prefHeight="11.0" prefWidth="1117.0" />
+                              <Separator layoutX="553.0" layoutY="348.0" orientation="VERTICAL" prefHeight="414.0" prefWidth="0.0" />
+                              <Separator layoutX="1.0" layoutY="378.0" prefHeight="11.0" prefWidth="1117.0" />
+                              <Separator layoutX="-1.0" layoutY="21.0" prefHeight="11.0" prefWidth="1117.0" />
+                              <Separator layoutX="-1.0" layoutY="47.0" prefHeight="9.0" prefWidth="1117.0" />
+                              <Button fx:id="btnActualizarPublicacionVendedor1" layoutX="57.0" layoutY="312.0" mnemonicParsing="false" onAction="#actualizarPublicacionVendedor1Action" prefHeight="25.0" prefWidth="138.0" style="-fx-background-color: #4452F6;" text="Actualizar Publicación" textFill="WHITE" />
+                              <Button fx:id="btnEliminarPublicacionVendedor1" layoutX="294.0" layoutY="312.0" mnemonicParsing="false" onAction="#eliminarPublicacionVendedor1Action" prefHeight="25.0" prefWidth="124.0" style="-fx-background-color: #4452F6;" text="Eliminar Publicación" textFill="WHITE" />
+                              <TabPane layoutX="3.0" layoutY="390.0" prefHeight="331.0" prefWidth="543.0" tabClosingPolicy="UNAVAILABLE">
+                                <tabs>
+                                  <Tab text="CRUD">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <ImageView fitHeight="121.0" fitWidth="196.0" layoutX="194.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" />
+                                                <Label layoutX="42.0" layoutY="172.0" text="Nombre:" />
+                                                <TextField fx:id="txtNombreProductoVendedor1" layoutX="98.0" layoutY="168.0" prefHeight="25.0" prefWidth="165.0" promptText="Ingrese nombre del producto..." />
+                                                <Label layoutX="42.0" layoutY="208.0" prefHeight="17.0" prefWidth="56.0" text="Categoria:" />
+                                                <Label layoutX="293.0" layoutY="172.0" text="Precio:" />
+                                                <Label layoutX="292.0" layoutY="208.0" text="Estado:" />
+                                                <TextField fx:id="txtPrecioProductoVendedor1" layoutX="339.0" layoutY="168.0" prefHeight="25.0" prefWidth="165.0" promptText="Ingrese precio del producto..." />
+                                                <ComboBox fx:id="comboBoxCategoriaVendedor1" layoutX="98.0" layoutY="204.0" prefHeight="25.0" prefWidth="165.0" promptText="Selecciones Categoria" />
+                                                <ComboBox fx:id="comboBoxEstadoVendedor1" layoutX="339.0" layoutY="204.0" prefHeight="25.0" prefWidth="165.0" promptText="Seleccione Estado" />
+                                                <Button fx:id="btnAgregarProductoVendedor1" layoutX="215.0" layoutY="256.0" mnemonicParsing="false" onAction="#agregarProductoVendedor1Action" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: #4452F6;" text="Agregar Producto" textFill="WHITE" />
+                                             </children>
+                                          </AnchorPane>
+                                    </content>
+                                  </Tab>
+                                  <Tab text="Lista productos">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TableView fx:id="tableProductosVendedor1" layoutX="15.0" layoutY="15.0" prefHeight="213.0" prefWidth="500.0" style="-fx-background-color: #4452F6;">
+                                                  <columns>
+                                                    <TableColumn fx:id="columnNombreProductoVendedor1" prefWidth="90.0" text="Nombre" />
+                                                    <TableColumn fx:id="columnPrecioProductoVendedor1" prefWidth="98.0" text="Precio" />
+                                                      <TableColumn fx:id="columnCategoriaProductoVendedor1" prefWidth="97.0" text="Categoria" />
+                                                      <TableColumn fx:id="columnEstadoProductoVendedor1" prefWidth="107.0" text="Estado" />
+                                                      <TableColumn fx:id="columnFechaProductoVendedor1" prefWidth="129.0" text="Fecha" />
+                                                  </columns>
+                                                </TableView>
+                                                <Button fx:id="btnPublicarProductoVendedor1" layoutX="399.0" layoutY="247.0" mnemonicParsing="false" onAction="#publicarProductoVendedor1Action" prefHeight="25.0" prefWidth="116.0" style="-fx-background-color: #4452F6;" text="Publicar Producto" textFill="WHITE" />
+                                                <Button fx:id="btnActualizarProductoVendedor1" layoutX="15.0" layoutY="247.0" mnemonicParsing="false" onAction="#actualizarProductoVendedor1Action" prefHeight="25.0" prefWidth="139.0" style="-fx-background-color: #4452F6;" text="Actualizar Producto" textFill="WHITE" />
+                                                <Button fx:id="btnEliminarProductoVendedor1" layoutX="212.0" layoutY="247.0" mnemonicParsing="false" onAction="#eliminarProductoVendedor1Action" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #4452F6;" text="Eliminar Producto" textFill="WHITE" />
+                                             </children>
+                                          </AnchorPane>
+                                    </content>
+                                  </Tab>
+                                </tabs>
+                              </TabPane>
+                              <TextField fx:id="txtMensajesVendedor1" layoutX="757.0" layoutY="256.0" prefHeight="43.0" prefWidth="344.0" promptText="Deje un mensaje al vendedor aqui..." />
+                              <Button fx:id="btnEnviarMensajeVendedor1" layoutX="877.0" layoutY="310.0" mnemonicParsing="false" onAction="#enviarMensajeVendedor1Action" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #4452F6;" text="Enviar Mensaje" textFill="WHITE" />
+                              <Label layoutX="778.0" layoutY="356.0" text="Informacion Contactos">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <TitledPane animated="false" expanded="false" layoutX="754.0" layoutY="73.0" text="Ver comentarios">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="labelComentariosPublicacionVendedor1" alignment="TOP_LEFT" layoutX="5.0" layoutY="7.0" prefHeight="165.0" prefWidth="182.0" text="Comentarios:" />
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </TitledPane>
+                              <TitledPane animated="false" expanded="false" layoutX="912.0" layoutY="-2.0" text="Ver Notificaciones">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="labelLikesPublicacionVendedor1" alignment="TOP_LEFT" layoutX="5.0" layoutY="7.0" prefHeight="165.0" prefWidth="182.0" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                              <TitledPane animated="false" expanded="false" layoutX="754.0" layoutY="214.0" text="Ver Mensajes">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="labelMensajesVendedor1" alignment="TOP_LEFT" layoutX="5.0" layoutY="7.0" prefHeight="165.0" prefWidth="182.0" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Vendedor 2">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="942.0">
+                     <children>
+                        <AnchorPane layoutX="2.0" layoutY="2.0" prefHeight="764.0" prefWidth="1117.0">
+                           <children>
+                              <Label layoutX="11.0" layoutY="2.0" prefHeight="17.0" prefWidth="77.0" text="Vendedor 2:">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <TabPane layoutX="673.0" layoutY="412.0" prefHeight="333.0" prefWidth="416.0" tabClosingPolicy="UNAVAILABLE">
+                                 <tabs>
+                                    <Tab text="Lista de contactos">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TableView fx:id="tableContactosVendedor2" layoutX="61.0" layoutY="39.0" prefHeight="177.0" prefWidth="305.0" style="-fx-background-color: #4452F6;">
+                                                   <columns>
+                                                      <TableColumn fx:id="columnNombreContactosVendedor2" minWidth="0.0" prefWidth="151.0" text="Nombre" />
+                                                      <TableColumn fx:id="columnApellidoContactosVendedor2" prefWidth="147.0" text="Apellido" />
+                                                   </columns>
+                                                </TableView>
+                                                <Button fx:id="btnEliminarContactoVendedor2" layoutX="147.0" layoutY="248.0" mnemonicParsing="false" onAction="#eliminarContactoVendedor2Action" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #4452F6;" text="Eliminar Contacto" textFill="WHITE" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab text="Sugerencia de contactos">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <Button fx:id="btnAgregarContactoSugerido2" layoutX="150.0" layoutY="248.0" mnemonicParsing="false" onAction="#agregarContactoSugeridoAction2" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #4452F6;" text="Agregar Contacto" textFill="WHITE" />
+                                                <TableView fx:id="tableSugeridosVendedor2" layoutX="67.0" layoutY="41.0" prefHeight="177.0" prefWidth="299.0" style="-fx-background-color: #4452F6;">
+                                                   <columns>
+                                                      <TableColumn fx:id="columnNombreSugeridosVendedor2" minWidth="0.0" prefWidth="150.0" text="Nombre" />
+                                                      <TableColumn fx:id="columnApellidoSugeridosVendedor2" prefWidth="139.0" text="Apellido" />
+                                                   </columns>
+                                                </TableView>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab text="Búsqueda de contactos">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TableView fx:id="tableBusquedaContactos2" layoutX="62.0" layoutY="64.0" prefHeight="177.0" prefWidth="293.0" style="-fx-background-color: #4452F6;">
+                                                   <columns>
+                                                      <TableColumn fx:id="columnNombreContactoBusqueda2" minWidth="0.0" prefWidth="144.0" text="Nombre" />
+                                                      <TableColumn fx:id="columnApellidoContactoBusqueda2" prefWidth="135.0" text="Apellido" />
+                                                   </columns>
+                                                </TableView>
+                                                <TextField fx:id="txtBuscarVendedor2" layoutX="138.0" layoutY="17.0" prefHeight="25.0" prefWidth="182.0" />
+                                                <Button fx:id="btnBuscarVendedor2" layoutX="338.0" layoutY="17.0" mnemonicParsing="false" onAction="#buscarVendedor2Action" prefHeight="25.0" prefWidth="57.0" style="-fx-background-color: #4452F6;" text="Buscar" textFill="WHITE" />
+                                                <Label layoutX="7.0" layoutY="21.0" text="Buscar vendedores:">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Button fx:id="btnAgregarContactoBusqueda2" layoutX="142.0" layoutY="258.0" mnemonicParsing="false" onAction="#agregarContactoBusquedaAction2" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #4452F6;" text="Agregar Contacto" textFill="WHITE" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                              </TabPane>
+                              <Label layoutX="10.0" layoutY="356.0" text="Informacion productos">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="26.0" prefHeight="26.0" prefWidth="185.0" text="Lista de publicaciones">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <TableView fx:id="tablePublicacionesVendedor2" layoutX="27.0" layoutY="85.0" prefHeight="214.0" prefWidth="657.0" style="-fx-background-color: #4452F6;">
+                                 <columns>
+                                    <TableColumn fx:id="columnFechaPublicacionVendedor2" prefWidth="130.0" text="Fecha publicacion" />
+                                    <TableColumn fx:id="columnNombreProductoPublicacionVendedor2" prefWidth="223.0" text="Nombre" />
+                                    <TableColumn fx:id="columnPrecioProductoPublicacionVendedor2" minWidth="0.0" prefWidth="231.0" text="Precio" />
+                                    <TableColumn fx:id="columnLikesVendedor2" prefWidth="64.0" text="Likes" />
+                                 </columns>
+                              </TableView>
+                              <Button fx:id="btnLikePublicacionVendedor2" layoutX="569.0" layoutY="312.0" mnemonicParsing="false" onAction="#likePublicacionVendedor2Action" prefHeight="25.0" prefWidth="79.0" style="-fx-background-color: #4452F6;" text="Me gusta" textFill="WHITE" />
+                              <TextField fx:id="txtComentarioPublicacionVendedor2" layoutX="754.0" layoutY="115.0" prefHeight="42.0" prefWidth="346.0" promptText="Agregue un comentario aqui..." />
+                              <Button fx:id="btnAgregarComentarioPublicacionVendedor2" layoutX="863.0" layoutY="167.0" mnemonicParsing="false" onAction="#agregarComentarioPublicacionVendedor2" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #4452F6;" text="Agregar Comentario" textFill="WHITE" />
+                              <Separator layoutX="-3.0" layoutY="340.0" prefHeight="11.0" prefWidth="1117.0" />
+                              <Separator layoutX="553.0" layoutY="348.0" orientation="VERTICAL" prefHeight="414.0" prefWidth="0.0" />
+                              <Separator layoutX="1.0" layoutY="378.0" prefHeight="11.0" prefWidth="1117.0" />
+                              <Separator layoutX="-1.0" layoutY="21.0" prefHeight="11.0" prefWidth="1117.0" />
+                              <Separator layoutX="-1.0" layoutY="47.0" prefHeight="9.0" prefWidth="1117.0" />
+                              <Button fx:id="btnActualizarPublicacionVendedor2" layoutX="57.0" layoutY="312.0" mnemonicParsing="false" onAction="#actualizarPublicacionVendedor2Action" prefHeight="25.0" prefWidth="138.0" style="-fx-background-color: #4452F6;" text="Actualizar Publicación" textFill="WHITE" />
+                              <Button fx:id="btnEliminarPublicacionVendedor2" layoutX="294.0" layoutY="312.0" mnemonicParsing="false" onAction="#eliminarPublicacionVendedor2Action" prefHeight="25.0" prefWidth="124.0" style="-fx-background-color: #4452F6;" text="Eliminar Publicación" textFill="WHITE" />
+                              <TabPane layoutX="3.0" layoutY="390.0" prefHeight="331.0" prefWidth="543.0" tabClosingPolicy="UNAVAILABLE">
+                                 <tabs>
+                                    <Tab text="CRUD">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <ImageView fitHeight="121.0" fitWidth="196.0" layoutX="194.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" />
+                                                <Label layoutX="42.0" layoutY="172.0" text="Nombre:" />
+                                                <TextField fx:id="txtNombreProductoVendedor2" layoutX="98.0" layoutY="168.0" prefHeight="25.0" prefWidth="165.0" promptText="Ingrese nombre del producto..." />
+                                                <Label layoutX="42.0" layoutY="208.0" prefHeight="17.0" prefWidth="56.0" text="Categoria:" />
+                                                <Label layoutX="293.0" layoutY="172.0" text="Precio:" />
+                                                <Label layoutX="292.0" layoutY="208.0" text="Estado:" />
+                                                <TextField fx:id="txtPrecioProductoVendedor2" layoutX="339.0" layoutY="168.0" prefHeight="25.0" prefWidth="165.0" promptText="Ingrese precio del producto..." />
+                                                <ComboBox fx:id="comboBoxCategoriaVendedor2" layoutX="98.0" layoutY="204.0" prefHeight="25.0" prefWidth="165.0" promptText="Selecciones Categoria" />
+                                                <ComboBox fx:id="comboBoxEstadoVendedor2" layoutX="339.0" layoutY="204.0" prefHeight="25.0" prefWidth="165.0" promptText="Seleccione Estado" />
+                                                <Button fx:id="btnAgregarProductoVendedor2" layoutX="215.0" layoutY="256.0" mnemonicParsing="false" onAction="#agregarProductoVendedor2Action" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: #4452F6;" text="Agregar Producto" textFill="WHITE" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab text="Lista productos">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TableView fx:id="tableProductosVendedor2" layoutX="15.0" layoutY="15.0" prefHeight="213.0" prefWidth="500.0" style="-fx-background-color: #4452F6;">
+                                                   <columns>
+                                                      <TableColumn fx:id="columnNombreProductoVendedor2" prefWidth="90.0" text="Nombre" />
+                                                      <TableColumn fx:id="columnPrecioProductoVendedor2" prefWidth="98.0" text="Precio" />
+                                                      <TableColumn fx:id="columnCategoriaProductoVendedor2" prefWidth="97.0" text="Categoria" />
+                                                      <TableColumn fx:id="columnEstadoProductoVendedor2" prefWidth="107.0" text="Estado" />
+                                                      <TableColumn fx:id="columnFechaProductoVendedor2" prefWidth="129.0" text="Fecha" />
+                                                   </columns>
+                                                </TableView>
+                                                <Button fx:id="btnPublicarProductoVendedor2" layoutX="399.0" layoutY="247.0" mnemonicParsing="false" onAction="#publicarProductoVendedor2Action" prefHeight="25.0" prefWidth="116.0" style="-fx-background-color: #4452F6;" text="Publicar Producto" textFill="WHITE" />
+                                                <Button fx:id="btnActualizarProductoVendedor2" layoutX="15.0" layoutY="247.0" mnemonicParsing="false" onAction="#actualizarProductoVendedor2Action" prefHeight="25.0" prefWidth="139.0" style="-fx-background-color: #4452F6;" text="Actualizar Producto" textFill="WHITE" />
+                                                <Button fx:id="btnEliminarProductoVendedor2" layoutX="212.0" layoutY="247.0" mnemonicParsing="false" onAction="#eliminarProductoVendedor2Action" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #4452F6;" text="Eliminar Producto" textFill="WHITE" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                              </TabPane>
+                              <TextField fx:id="txtMensajesVendedor2" layoutX="757.0" layoutY="256.0" prefHeight="43.0" prefWidth="344.0" promptText="Deje un mensaje al vendedor aqui..." />
+                              <Button fx:id="btnEnviarMensajeVendedor2" layoutX="877.0" layoutY="310.0" mnemonicParsing="false" onAction="#enviarMensajeVendedor2Action" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #4452F6;" text="Enviar Mensaje" textFill="WHITE" />
+                              <Label layoutX="778.0" layoutY="356.0" text="Informacion Contactos">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <TitledPane animated="false" expanded="false" layoutX="754.0" layoutY="73.0" text="Ver comentarios">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="labelComentariosPublicacionVendedor2" alignment="TOP_LEFT" layoutX="5.0" layoutY="7.0" prefHeight="165.0" prefWidth="182.0" text="Comentarios:" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                              <TitledPane animated="false" expanded="false" layoutX="912.0" layoutY="-2.0" text="Ver Notificaciones">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="labelLikesPublicacionVendedor2" alignment="TOP_LEFT" layoutX="5.0" layoutY="7.0" prefHeight="165.0" prefWidth="182.0" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                              <TitledPane animated="false" expanded="false" layoutX="754.0" layoutY="214.0" text="Ver Mensajes">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="labelMensajesVendedor2" alignment="TOP_LEFT" layoutX="5.0" layoutY="7.0" prefHeight="165.0" prefWidth="182.0" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Vendedor 3">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="942.0">
+                     <children>
+                        <AnchorPane layoutX="2.0" layoutY="2.0" prefHeight="764.0" prefWidth="1117.0">
+                           <children>
+                              <Label layoutX="11.0" layoutY="2.0" prefHeight="17.0" prefWidth="77.0" text="Vendedor 3:">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <TabPane layoutX="673.0" layoutY="412.0" prefHeight="333.0" prefWidth="416.0" tabClosingPolicy="UNAVAILABLE">
+                                 <tabs>
+                                    <Tab text="Lista de contactos">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TableView fx:id="tableContactosVendedor3" layoutX="61.0" layoutY="39.0" prefHeight="177.0" prefWidth="305.0" style="-fx-background-color: #4452F6;">
+                                                   <columns>
+                                                      <TableColumn fx:id="columnNombreContactosVendedor3" minWidth="0.0" prefWidth="151.0" text="Nombre" />
+                                                      <TableColumn fx:id="columnApellidoContactosVendedor3" prefWidth="147.0" text="Apellido" />
+                                                   </columns>
+                                                </TableView>
+                                                <Button fx:id="btnEliminarContactoVendedor3" layoutX="147.0" layoutY="248.0" mnemonicParsing="false" onAction="#eliminarContactoVendedor3Action" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #4452F6;" text="Eliminar Contacto" textFill="WHITE" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab text="Sugerencia de contactos">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <Button fx:id="btnAgregarContactoSugerido3" layoutX="150.0" layoutY="248.0" mnemonicParsing="false" onAction="#agregarContactoSugeridoAction3" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #4452F6;" text="Agregar Contacto" textFill="WHITE" />
+                                                <TableView fx:id="tableSugeridosVendedor3" layoutX="67.0" layoutY="41.0" prefHeight="177.0" prefWidth="299.0" style="-fx-background-color: #4452F6;">
+                                                   <columns>
+                                                      <TableColumn fx:id="columnNombreSugeridosVendedor3" minWidth="0.0" prefWidth="150.0" text="Nombre" />
+                                                      <TableColumn fx:id="columnApellidoSugeridosVendedor3" prefWidth="139.0" text="Apellido" />
+                                                   </columns>
+                                                </TableView>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab text="Búsqueda de contactos">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TableView fx:id="tableBusquedaContactos3" layoutX="62.0" layoutY="64.0" prefHeight="177.0" prefWidth="293.0" style="-fx-background-color: #4452F6;">
+                                                   <columns>
+                                                      <TableColumn fx:id="columnNombreContactoBusqueda3" minWidth="0.0" prefWidth="144.0" text="Nombre" />
+                                                      <TableColumn fx:id="columnApellidoContactoBusqueda3" prefWidth="135.0" text="Apellido" />
+                                                   </columns>
+                                                </TableView>
+                                                <TextField fx:id="txtBuscarVendedor3" layoutX="138.0" layoutY="17.0" prefHeight="25.0" prefWidth="182.0" />
+                                                <Button fx:id="btnBuscarVendedor3" layoutX="338.0" layoutY="17.0" mnemonicParsing="false" onAction="#buscarVendedor3Action" prefHeight="25.0" prefWidth="57.0" style="-fx-background-color: #4452F6;" text="Buscar" textFill="WHITE" />
+                                                <Label layoutX="7.0" layoutY="21.0" text="Buscar vendedores:">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Button fx:id="btnAgregarContactoBusqueda3" layoutX="142.0" layoutY="258.0" mnemonicParsing="false" onAction="#agregarContactoBusquedaAction3" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #4452F6;" text="Agregar Contacto" textFill="WHITE" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                              </TabPane>
+                              <Label layoutX="10.0" layoutY="356.0" text="Informacion productos">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="26.0" prefHeight="26.0" prefWidth="185.0" text="Lista de publicaciones">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <TableView fx:id="tablePublicacionesVendedor3" layoutX="27.0" layoutY="85.0" prefHeight="214.0" prefWidth="657.0" style="-fx-background-color: #4452F6;">
+                                 <columns>
+                                    <TableColumn fx:id="columnFechaPublicacionVendedor3" prefWidth="130.0" text="Fecha publicacion" />
+                                    <TableColumn fx:id="columnNombreProductoPublicacionVendedor3" prefWidth="223.0" text="Nombre" />
+                                    <TableColumn fx:id="columnPrecioProductoPublicacionVendedor3" minWidth="0.0" prefWidth="231.0" text="Precio" />
+                                    <TableColumn fx:id="columnLikesVendedor3" prefWidth="64.0" text="Likes" />
+                                 </columns>
+                              </TableView>
+                              <Button fx:id="btnLikePublicacionVendedor3" layoutX="569.0" layoutY="312.0" mnemonicParsing="false" onAction="#likePublicacionVendedor3Action" prefHeight="25.0" prefWidth="79.0" style="-fx-background-color: #4452F6;" text="Me gusta" textFill="WHITE" />
+                              <TextField fx:id="txtComentarioPublicacionVendedor3" layoutX="754.0" layoutY="115.0" prefHeight="42.0" prefWidth="346.0" promptText="Agregue un comentario aqui..." />
+                              <Button fx:id="btnAgregarComentarioPublicacionVendedor3" layoutX="863.0" layoutY="167.0" mnemonicParsing="false" onAction="#agregarComentarioPublicacionVendedor3" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #4452F6;" text="Agregar Comentario" textFill="WHITE" />
+                              <Separator layoutX="-3.0" layoutY="340.0" prefHeight="11.0" prefWidth="1117.0" />
+                              <Separator layoutX="553.0" layoutY="348.0" orientation="VERTICAL" prefHeight="414.0" prefWidth="0.0" />
+                              <Separator layoutX="1.0" layoutY="378.0" prefHeight="11.0" prefWidth="1117.0" />
+                              <Separator layoutX="-1.0" layoutY="21.0" prefHeight="11.0" prefWidth="1117.0" />
+                              <Separator layoutX="-1.0" layoutY="47.0" prefHeight="9.0" prefWidth="1117.0" />
+                              <Button fx:id="btnActualizarPublicacionVendedor3" layoutX="57.0" layoutY="312.0" mnemonicParsing="false" onAction="#actualizarPublicacionVendedor3Action" prefHeight="25.0" prefWidth="138.0" style="-fx-background-color: #4452F6;" text="Actualizar Publicación" textFill="WHITE" />
+                              <Button fx:id="btnEliminarPublicacionVendedor3" layoutX="294.0" layoutY="312.0" mnemonicParsing="false" onAction="#eliminarPublicacionVendedor3Action" prefHeight="25.0" prefWidth="124.0" style="-fx-background-color: #4452F6;" text="Eliminar Publicación" textFill="WHITE" />
+                              <TabPane layoutX="3.0" layoutY="390.0" prefHeight="331.0" prefWidth="543.0" tabClosingPolicy="UNAVAILABLE">
+                                 <tabs>
+                                    <Tab text="CRUD">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <ImageView fitHeight="121.0" fitWidth="196.0" layoutX="194.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" />
+                                                <Label layoutX="42.0" layoutY="172.0" text="Nombre:" />
+                                                <TextField fx:id="txtNombreProductoVendedor3" layoutX="98.0" layoutY="168.0" prefHeight="25.0" prefWidth="165.0" promptText="Ingrese nombre del producto..." />
+                                                <Label layoutX="42.0" layoutY="208.0" prefHeight="17.0" prefWidth="56.0" text="Categoria:" />
+                                                <Label layoutX="293.0" layoutY="172.0" text="Precio:" />
+                                                <Label layoutX="292.0" layoutY="208.0" text="Estado:" />
+                                                <TextField fx:id="txtPrecioProductoVendedor3" layoutX="339.0" layoutY="168.0" prefHeight="25.0" prefWidth="165.0" promptText="Ingrese precio del producto..." />
+                                                <ComboBox fx:id="comboBoxCategoriaVendedor3" layoutX="98.0" layoutY="204.0" prefHeight="25.0" prefWidth="165.0" promptText="Selecciones Categoria" />
+                                                <ComboBox fx:id="comboBoxEstadoVendedor3" layoutX="339.0" layoutY="204.0" prefHeight="25.0" prefWidth="165.0" promptText="Seleccione Estado" />
+                                                <Button fx:id="btnAgregarProductoVendedor3" layoutX="215.0" layoutY="256.0" mnemonicParsing="false" onAction="#agregarProductoVendedor3Action" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: #4452F6;" text="Agregar Producto" textFill="WHITE" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab text="Lista productos">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TableView fx:id="tableProductosVendedor3" layoutX="15.0" layoutY="15.0" prefHeight="213.0" prefWidth="500.0" style="-fx-background-color: #4452F6;">
+                                                   <columns>
+                                                      <TableColumn fx:id="columnNombreProductoVendedor3" prefWidth="90.0" text="Nombre" />
+                                                      <TableColumn fx:id="columnPrecioProductoVendedor3" prefWidth="98.0" text="Precio" />
+                                                      <TableColumn fx:id="columnCategoriaProductoVendedor3" prefWidth="97.0" text="Categoria" />
+                                                      <TableColumn fx:id="columnEstadoProductoVendedor3" prefWidth="107.0" text="Estado" />
+                                                      <TableColumn fx:id="columnFechaProductoVendedor3" prefWidth="129.0" text="Fecha" />
+                                                   </columns>
+                                                </TableView>
+                                                <Button fx:id="btnPublicarProductoVendedor3" layoutX="399.0" layoutY="247.0" mnemonicParsing="false" onAction="#publicarProductoVendedor3Action" prefHeight="25.0" prefWidth="116.0" style="-fx-background-color: #4452F6;" text="Publicar Producto" textFill="WHITE" />
+                                                <Button fx:id="btnActualizarProductoVendedor3" layoutX="15.0" layoutY="247.0" mnemonicParsing="false" onAction="#actualizarProductoVendedor3Action" prefHeight="25.0" prefWidth="139.0" style="-fx-background-color: #4452F6;" text="Actualizar Producto" textFill="WHITE" />
+                                                <Button fx:id="btnEliminarProductoVendedor3" layoutX="212.0" layoutY="247.0" mnemonicParsing="false" onAction="#eliminarProductoVendedor3Action" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #4452F6;" text="Eliminar Producto" textFill="WHITE" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                              </TabPane>
+                              <TextField fx:id="txtMensajesVendedor3" layoutX="757.0" layoutY="256.0" prefHeight="43.0" prefWidth="344.0" promptText="Deje un mensaje al vendedor aqui..." />
+                              <Button fx:id="btnEnviarMensajeVendedor3" layoutX="877.0" layoutY="310.0" mnemonicParsing="false" onAction="#enviarMensajeVendedor3Action" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #4452F6;" text="Enviar Mensaje" textFill="WHITE" />
+                              <Label layoutX="778.0" layoutY="356.0" text="Informacion Contactos">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <TitledPane animated="false" expanded="false" layoutX="754.0" layoutY="73.0" text="Ver comentarios">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="labelComentariosPublicacionVendedor3" alignment="TOP_LEFT" layoutX="5.0" layoutY="7.0" prefHeight="165.0" prefWidth="182.0" text="Comentarios:" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                              <TitledPane animated="false" expanded="false" layoutX="912.0" layoutY="-2.0" text="Ver Notificaciones">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="labelLikesPublicacionVendedor3" alignment="TOP_LEFT" layoutX="5.0" layoutY="7.0" prefHeight="165.0" prefWidth="182.0" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                              <TitledPane animated="false" expanded="false" layoutX="754.0" layoutY="214.0" text="Ver Mensajes">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="labelMensajesVendedor3" alignment="TOP_LEFT" layoutX="5.0" layoutY="7.0" prefHeight="165.0" prefWidth="182.0" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Vendedor 4">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="942.0">
+                     <children>
+                        <AnchorPane layoutX="2.0" layoutY="2.0" prefHeight="764.0" prefWidth="1117.0">
+                           <children>
+                              <Label layoutX="11.0" layoutY="2.0" prefHeight="17.0" prefWidth="77.0" text="Vendedor 4:">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <TabPane layoutX="673.0" layoutY="412.0" prefHeight="333.0" prefWidth="416.0" tabClosingPolicy="UNAVAILABLE">
+                                 <tabs>
+                                    <Tab text="Lista de contactos">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TableView fx:id="tableContactosVendedor4" layoutX="61.0" layoutY="39.0" prefHeight="177.0" prefWidth="305.0" style="-fx-background-color: #4452F6;">
+                                                   <columns>
+                                                      <TableColumn fx:id="columnNombreContactosVendedor4" minWidth="0.0" prefWidth="151.0" text="Nombre" />
+                                                      <TableColumn fx:id="columnApellidoContactosVendedor4" prefWidth="147.0" text="Apellido" />
+                                                   </columns>
+                                                </TableView>
+                                                <Button fx:id="btnEliminarContactoVendedor4" layoutX="147.0" layoutY="248.0" mnemonicParsing="false" onAction="#eliminarContactoVendedor4Action" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #4452F6;" text="Eliminar Contacto" textFill="WHITE" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab text="Sugerencia de contactos">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <Button fx:id="btnAgregarContactoSugerido4" layoutX="150.0" layoutY="248.0" mnemonicParsing="false" onAction="#agregarContactoSugeridoAction4" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #4452F6;" text="Agregar Contacto" textFill="WHITE" />
+                                                <TableView fx:id="tableSugeridosVendedor4" layoutX="67.0" layoutY="41.0" prefHeight="177.0" prefWidth="299.0" style="-fx-background-color: #4452F6;">
+                                                   <columns>
+                                                      <TableColumn fx:id="columnNombreSugeridosVendedor4" minWidth="0.0" prefWidth="150.0" text="Nombre" />
+                                                      <TableColumn fx:id="columnApellidoSugeridosVendedor4" prefWidth="139.0" text="Apellido" />
+                                                   </columns>
+                                                </TableView>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab text="Búsqueda de contactos">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TableView fx:id="tableBusquedaContactos4" layoutX="62.0" layoutY="64.0" prefHeight="177.0" prefWidth="293.0" style="-fx-background-color: #4452F6;">
+                                                   <columns>
+                                                      <TableColumn fx:id="columnNombreContactoBusqueda4" minWidth="0.0" prefWidth="144.0" text="Nombre" />
+                                                      <TableColumn fx:id="columnApellidoContactoBusqueda4" prefWidth="135.0" text="Apellido" />
+                                                   </columns>
+                                                </TableView>
+                                                <TextField fx:id="txtBuscarVendedor4" layoutX="138.0" layoutY="17.0" prefHeight="25.0" prefWidth="182.0" />
+                                                <Button fx:id="btnBuscarVendedor4" layoutX="338.0" layoutY="17.0" mnemonicParsing="false" onAction="#buscarVendedor4Action" prefHeight="25.0" prefWidth="57.0" style="-fx-background-color: #4452F6;" text="Buscar" textFill="WHITE" />
+                                                <Label layoutX="7.0" layoutY="21.0" text="Buscar vendedores:">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Button fx:id="btnAgregarContactoBusqueda4" layoutX="142.0" layoutY="258.0" mnemonicParsing="false" onAction="#agregarContactoBusquedaAction4" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #4452F6;" text="Agregar Contacto" textFill="WHITE" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                              </TabPane>
+                              <Label layoutX="10.0" layoutY="356.0" text="Informacion productos">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="26.0" prefHeight="26.0" prefWidth="185.0" text="Lista de publicaciones">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <TableView fx:id="tablePublicacionesVendedor4" layoutX="27.0" layoutY="85.0" prefHeight="214.0" prefWidth="657.0" style="-fx-background-color: #4452F6;">
+                                 <columns>
+                                    <TableColumn fx:id="columnFechaPublicacionVendedor4" prefWidth="130.0" text="Fecha publicacion" />
+                                    <TableColumn fx:id="columnNombreProductoPublicacionVendedor4" prefWidth="223.0" text="Nombre" />
+                                    <TableColumn fx:id="columnPrecioProductoPublicacionVendedor4" minWidth="0.0" prefWidth="231.0" text="Precio" />
+                                    <TableColumn fx:id="columnLikesVendedor4" prefWidth="64.0" text="Likes" />
+                                 </columns>
+                              </TableView>
+                              <Button fx:id="btnLikePublicacionVendedor4" layoutX="569.0" layoutY="312.0" mnemonicParsing="false" onAction="#likePublicacionVendedor4Action" prefHeight="25.0" prefWidth="79.0" style="-fx-background-color: #4452F6;" text="Me gusta" textFill="WHITE" />
+                              <TextField fx:id="txtComentarioPublicacionVendedor4" layoutX="754.0" layoutY="115.0" prefHeight="42.0" prefWidth="346.0" promptText="Agregue un comentario aqui..." />
+                              <Button fx:id="btnAgregarComentarioPublicacionVendedor4" layoutX="863.0" layoutY="167.0" mnemonicParsing="false" onAction="#agregarComentarioPublicacionVendedor4" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #4452F6;" text="Agregar Comentario" textFill="WHITE" />
+                              <Separator layoutX="-3.0" layoutY="340.0" prefHeight="11.0" prefWidth="1117.0" />
+                              <Separator layoutX="553.0" layoutY="348.0" orientation="VERTICAL" prefHeight="414.0" prefWidth="0.0" />
+                              <Separator layoutX="1.0" layoutY="378.0" prefHeight="11.0" prefWidth="1117.0" />
+                              <Separator layoutX="-1.0" layoutY="21.0" prefHeight="11.0" prefWidth="1117.0" />
+                              <Separator layoutX="-1.0" layoutY="47.0" prefHeight="9.0" prefWidth="1117.0" />
+                              <Button fx:id="btnActualizarPublicacionVendedor4" layoutX="57.0" layoutY="312.0" mnemonicParsing="false" onAction="#actualizarPublicacionVendedor4Action" prefHeight="25.0" prefWidth="138.0" style="-fx-background-color: #4452F6;" text="Actualizar Publicación" textFill="WHITE" />
+                              <Button fx:id="btnEliminarPublicacionVendedor4" layoutX="294.0" layoutY="312.0" mnemonicParsing="false" onAction="#eliminarPublicacionVendedor4Action" prefHeight="25.0" prefWidth="124.0" style="-fx-background-color: #4452F6;" text="Eliminar Publicación" textFill="WHITE" />
+                              <TabPane layoutX="3.0" layoutY="390.0" prefHeight="331.0" prefWidth="543.0" tabClosingPolicy="UNAVAILABLE">
+                                 <tabs>
+                                    <Tab text="CRUD">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <ImageView fitHeight="121.0" fitWidth="196.0" layoutX="194.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" />
+                                                <Label layoutX="42.0" layoutY="172.0" text="Nombre:" />
+                                                <TextField fx:id="txtNombreProductoVendedor4" layoutX="98.0" layoutY="168.0" prefHeight="25.0" prefWidth="165.0" promptText="Ingrese nombre del producto..." />
+                                                <Label layoutX="42.0" layoutY="208.0" prefHeight="17.0" prefWidth="56.0" text="Categoria:" />
+                                                <Label layoutX="293.0" layoutY="172.0" text="Precio:" />
+                                                <Label layoutX="292.0" layoutY="208.0" text="Estado:" />
+                                                <TextField fx:id="txtPrecioProductoVendedor4" layoutX="339.0" layoutY="168.0" prefHeight="25.0" prefWidth="165.0" promptText="Ingrese precio del producto..." />
+                                                <ComboBox fx:id="comboBoxCategoriaVendedor4" layoutX="98.0" layoutY="204.0" prefHeight="25.0" prefWidth="165.0" promptText="Selecciones Categoria" />
+                                                <ComboBox fx:id="comboBoxEstadoVendedor4" layoutX="339.0" layoutY="204.0" prefHeight="25.0" prefWidth="165.0" promptText="Seleccione Estado" />
+                                                <Button fx:id="btnAgregarProductoVendedor4" layoutX="215.0" layoutY="256.0" mnemonicParsing="false" onAction="#agregarProductoVendedor4Action" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: #4452F6;" text="Agregar Producto" textFill="WHITE" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab text="Lista productos">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TableView fx:id="tableProductosVendedor4" layoutX="15.0" layoutY="15.0" prefHeight="213.0" prefWidth="500.0" style="-fx-background-color: #4452F6;">
+                                                   <columns>
+                                                      <TableColumn fx:id="columnNombreProductoVendedor4" prefWidth="90.0" text="Nombre" />
+                                                      <TableColumn fx:id="columnPrecioProductoVendedor4" prefWidth="98.0" text="Precio" />
+                                                      <TableColumn fx:id="columnCategoriaProductoVendedor4" prefWidth="97.0" text="Categoria" />
+                                                      <TableColumn fx:id="columnEstadoProductoVendedor4" prefWidth="107.0" text="Estado" />
+                                                      <TableColumn fx:id="columnFechaProductoVendedor4" prefWidth="129.0" text="Fecha" />
+                                                   </columns>
+                                                </TableView>
+                                                <Button fx:id="btnPublicarProductoVendedor4" layoutX="399.0" layoutY="247.0" mnemonicParsing="false" onAction="#publicarProductoVendedor4Action" prefHeight="25.0" prefWidth="116.0" style="-fx-background-color: #4452F6;" text="Publicar Producto" textFill="WHITE" />
+                                                <Button fx:id="btnActualizarProductoVendedor4" layoutX="15.0" layoutY="247.0" mnemonicParsing="false" onAction="#actualizarProductoVendedor4Action" prefHeight="25.0" prefWidth="139.0" style="-fx-background-color: #4452F6;" text="Actualizar Producto" textFill="WHITE" />
+                                                <Button fx:id="btnEliminarProductoVendedor4" layoutX="212.0" layoutY="247.0" mnemonicParsing="false" onAction="#eliminarProductoVendedor4Action" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #4452F6;" text="Eliminar Producto" textFill="WHITE" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                              </TabPane>
+                              <TextField fx:id="txtMensajesVendedor4" layoutX="757.0" layoutY="256.0" prefHeight="43.0" prefWidth="344.0" promptText="Deje un mensaje al vendedor aqui..." />
+                              <Button fx:id="btnEnviarMensajeVendedor4" layoutX="877.0" layoutY="310.0" mnemonicParsing="false" onAction="#enviarMensajeVendedor4Action" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #4452F6;" text="Enviar Mensaje" textFill="WHITE" />
+                              <Label layoutX="778.0" layoutY="356.0" text="Informacion Contactos">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <TitledPane animated="false" expanded="false" layoutX="754.0" layoutY="73.0" text="Ver comentarios">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="labelComentariosPublicacionVendedor4" alignment="TOP_LEFT" layoutX="5.0" layoutY="7.0" prefHeight="165.0" prefWidth="182.0" text="Comentarios:" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                              <TitledPane animated="false" expanded="false" layoutX="912.0" layoutY="-2.0" text="Ver Notificaciones">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="labelLikesPublicacionVendedor4" alignment="TOP_LEFT" layoutX="5.0" layoutY="7.0" prefHeight="165.0" prefWidth="182.0" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                              <TitledPane animated="false" expanded="false" layoutX="754.0" layoutY="214.0" text="Ver Mensajes">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="labelMensajesVendedor4" alignment="TOP_LEFT" layoutX="5.0" layoutY="7.0" prefHeight="165.0" prefWidth="182.0" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Vendedor 5">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="942.0">
+                     <children>
+                        <AnchorPane layoutX="2.0" layoutY="2.0" prefHeight="764.0" prefWidth="1117.0">
+                           <children>
+                              <Label layoutX="11.0" layoutY="2.0" prefHeight="17.0" prefWidth="77.0" text="Vendedor 5:">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <TabPane layoutX="673.0" layoutY="412.0" prefHeight="333.0" prefWidth="416.0" tabClosingPolicy="UNAVAILABLE">
+                                 <tabs>
+                                    <Tab text="Lista de contactos">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TableView fx:id="tableContactosVendedor5" layoutX="61.0" layoutY="39.0" prefHeight="177.0" prefWidth="305.0" style="-fx-background-color: #4452F6;">
+                                                   <columns>
+                                                      <TableColumn fx:id="columnNombreContactosVendedor5" minWidth="0.0" prefWidth="151.0" text="Nombre" />
+                                                      <TableColumn fx:id="columnApellidoContactosVendedor5" prefWidth="147.0" text="Apellido" />
+                                                   </columns>
+                                                </TableView>
+                                                <Button fx:id="btnEliminarContactoVendedor5" layoutX="147.0" layoutY="248.0" mnemonicParsing="false" onAction="#eliminarContactoVendedor5Action" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #4452F6;" text="Eliminar Contacto" textFill="WHITE" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab text="Sugerencia de contactos">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <Button fx:id="btnAgregarContactoSugerido5" layoutX="150.0" layoutY="248.0" mnemonicParsing="false" onAction="#agregarContactoSugeridoAction5" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #4452F6;" text="Agregar Contacto" textFill="WHITE" />
+                                                <TableView fx:id="tableSugeridosVendedor5" layoutX="67.0" layoutY="41.0" prefHeight="177.0" prefWidth="299.0" style="-fx-background-color: #4452F6;">
+                                                   <columns>
+                                                      <TableColumn fx:id="columnNombreSugeridosVendedor5" minWidth="0.0" prefWidth="150.0" text="Nombre" />
+                                                      <TableColumn fx:id="columnApellidoSugeridosVendedor5" prefWidth="139.0" text="Apellido" />
+                                                   </columns>
+                                                </TableView>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab text="Búsqueda de contactos">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TableView fx:id="tableBusquedaContactos5" layoutX="62.0" layoutY="64.0" prefHeight="177.0" prefWidth="293.0" style="-fx-background-color: #4452F6;">
+                                                   <columns>
+                                                      <TableColumn fx:id="columnNombreContactoBusqueda5" minWidth="0.0" prefWidth="144.0" text="Nombre" />
+                                                      <TableColumn fx:id="columnApellidoContactoBusqueda5" prefWidth="135.0" text="Apellido" />
+                                                   </columns>
+                                                </TableView>
+                                                <TextField fx:id="txtBuscarVendedor5" layoutX="138.0" layoutY="17.0" prefHeight="25.0" prefWidth="182.0" />
+                                                <Button fx:id="btnBuscarVendedor5" layoutX="338.0" layoutY="17.0" mnemonicParsing="false" onAction="#buscarVendedor5Action" prefHeight="25.0" prefWidth="57.0" style="-fx-background-color: #4452F6;" text="Buscar" textFill="WHITE" />
+                                                <Label layoutX="7.0" layoutY="21.0" text="Buscar vendedores:">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Button fx:id="btnAgregarContactoBusqueda5" layoutX="142.0" layoutY="258.0" mnemonicParsing="false" onAction="#agregarContactoBusquedaAction5" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #4452F6;" text="Agregar Contacto" textFill="WHITE" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                              </TabPane>
+                              <Label layoutX="10.0" layoutY="356.0" text="Informacion productos">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="26.0" prefHeight="26.0" prefWidth="185.0" text="Lista de publicaciones">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <TableView fx:id="tablePublicacionesVendedor5" layoutX="27.0" layoutY="85.0" prefHeight="214.0" prefWidth="657.0" style="-fx-background-color: #4452F6;">
+                                 <columns>
+                                    <TableColumn fx:id="columnFechaPublicacionVendedor5" prefWidth="130.0" text="Fecha publicacion" />
+                                    <TableColumn fx:id="columnNombreProductoPublicacionVendedor5" prefWidth="223.0" text="Nombre" />
+                                    <TableColumn fx:id="columnPrecioProductoPublicacionVendedor5" minWidth="0.0" prefWidth="231.0" text="Precio" />
+                                    <TableColumn fx:id="columnLikesVendedor5" prefWidth="64.0" text="Likes" />
+                                 </columns>
+                              </TableView>
+                              <Button fx:id="btnLikePublicacionVendedor5" layoutX="569.0" layoutY="312.0" mnemonicParsing="false" onAction="#likePublicacionVendedor5Action" prefHeight="25.0" prefWidth="79.0" style="-fx-background-color: #4452F6;" text="Me gusta" textFill="WHITE" />
+                              <TextField fx:id="txtComentarioPublicacionVendedor5" layoutX="754.0" layoutY="115.0" prefHeight="42.0" prefWidth="346.0" promptText="Agregue un comentario aqui..." />
+                              <Button fx:id="btnAgregarComentarioPublicacionVendedor5" layoutX="863.0" layoutY="167.0" mnemonicParsing="false" onAction="#agregarComentarioPublicacionVendedor5" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #4452F6;" text="Agregar Comentario" textFill="WHITE" />
+                              <Separator layoutX="-3.0" layoutY="340.0" prefHeight="11.0" prefWidth="1117.0" />
+                              <Separator layoutX="553.0" layoutY="348.0" orientation="VERTICAL" prefHeight="414.0" prefWidth="0.0" />
+                              <Separator layoutX="1.0" layoutY="378.0" prefHeight="11.0" prefWidth="1117.0" />
+                              <Separator layoutX="-1.0" layoutY="21.0" prefHeight="11.0" prefWidth="1117.0" />
+                              <Separator layoutX="-1.0" layoutY="47.0" prefHeight="9.0" prefWidth="1117.0" />
+                              <Button fx:id="btnActualizarPublicacionVendedor5" layoutX="57.0" layoutY="312.0" mnemonicParsing="false" onAction="#actualizarPublicacionVendedor5Action" prefHeight="25.0" prefWidth="138.0" style="-fx-background-color: #4452F6;" text="Actualizar Publicación" textFill="WHITE" />
+                              <Button fx:id="btnEliminarPublicacionVendedor5" layoutX="294.0" layoutY="312.0" mnemonicParsing="false" onAction="#eliminarPublicacionVendedor5Action" prefHeight="25.0" prefWidth="124.0" style="-fx-background-color: #4452F6;" text="Eliminar Publicación" textFill="WHITE" />
+                              <TabPane layoutX="3.0" layoutY="390.0" prefHeight="331.0" prefWidth="543.0" tabClosingPolicy="UNAVAILABLE">
+                                 <tabs>
+                                    <Tab text="CRUD">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <ImageView fitHeight="121.0" fitWidth="196.0" layoutX="194.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" />
+                                                <Label layoutX="42.0" layoutY="172.0" text="Nombre:" />
+                                                <TextField fx:id="txtNombreProductoVendedor5" layoutX="98.0" layoutY="168.0" prefHeight="25.0" prefWidth="165.0" promptText="Ingrese nombre del producto..." />
+                                                <Label layoutX="42.0" layoutY="208.0" prefHeight="17.0" prefWidth="56.0" text="Categoria:" />
+                                                <Label layoutX="293.0" layoutY="172.0" text="Precio:" />
+                                                <Label layoutX="292.0" layoutY="208.0" text="Estado:" />
+                                                <TextField fx:id="txtPrecioProductoVendedor5" layoutX="339.0" layoutY="168.0" prefHeight="25.0" prefWidth="165.0" promptText="Ingrese precio del producto..." />
+                                                <ComboBox fx:id="comboBoxCategoriaVendedor5" layoutX="98.0" layoutY="204.0" prefHeight="25.0" prefWidth="165.0" promptText="Selecciones Categoria" />
+                                                <ComboBox fx:id="comboBoxEstadoVendedor5" layoutX="339.0" layoutY="204.0" prefHeight="25.0" prefWidth="165.0" promptText="Seleccione Estado" />
+                                                <Button fx:id="btnAgregarProductoVendedor5" layoutX="215.0" layoutY="256.0" mnemonicParsing="false" onAction="#agregarProductoVendedor5Action" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: #4452F6;" text="Agregar Producto" textFill="WHITE" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab text="Lista productos">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TableView fx:id="tableProductosVendedor5" layoutX="15.0" layoutY="15.0" prefHeight="213.0" prefWidth="500.0" style="-fx-background-color: #4452F6;">
+                                                   <columns>
+                                                      <TableColumn fx:id="columnNombreProductoVendedor5" prefWidth="90.0" text="Nombre" />
+                                                      <TableColumn fx:id="columnPrecioProductoVendedor5" prefWidth="98.0" text="Precio" />
+                                                      <TableColumn fx:id="columnCategoriaProductoVendedor5" prefWidth="97.0" text="Categoria" />
+                                                      <TableColumn fx:id="columnEstadoProductoVendedor5" prefWidth="107.0" text="Estado" />
+                                                      <TableColumn fx:id="columnFechaProductoVendedor5" prefWidth="129.0" text="Fecha" />
+                                                   </columns>
+                                                </TableView>
+                                                <Button fx:id="btnPublicarProductoVendedor5" layoutX="399.0" layoutY="247.0" mnemonicParsing="false" onAction="#publicarProductoVendedor5Action" prefHeight="25.0" prefWidth="116.0" style="-fx-background-color: #4452F6;" text="Publicar Producto" textFill="WHITE" />
+                                                <Button fx:id="btnActualizarProductoVendedor5" layoutX="15.0" layoutY="247.0" mnemonicParsing="false" onAction="#actualizarProductoVendedor5Action" prefHeight="25.0" prefWidth="139.0" style="-fx-background-color: #4452F6;" text="Actualizar Producto" textFill="WHITE" />
+                                                <Button fx:id="btnEliminarProductoVendedor5" layoutX="212.0" layoutY="247.0" mnemonicParsing="false" onAction="#eliminarProductoVendedor5Action" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #4452F6;" text="Eliminar Producto" textFill="WHITE" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                              </TabPane>
+                              <TextField fx:id="txtMensajesVendedor5" layoutX="757.0" layoutY="256.0" prefHeight="43.0" prefWidth="344.0" promptText="Deje un mensaje al vendedor aqui..." />
+                              <Button fx:id="btnEnviarMensajeVendedor5" layoutX="877.0" layoutY="310.0" mnemonicParsing="false" onAction="#enviarMensajeVendedor5Action" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #4452F6;" text="Enviar Mensaje" textFill="WHITE" />
+                              <Label layoutX="778.0" layoutY="356.0" text="Informacion Contactos">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <TitledPane animated="false" expanded="false" layoutX="754.0" layoutY="73.0" text="Ver comentarios">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="labelComentariosPublicacionVendedor5" alignment="TOP_LEFT" layoutX="5.0" layoutY="7.0" prefHeight="165.0" prefWidth="182.0" text="Comentarios:" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                              <TitledPane animated="false" expanded="false" layoutX="912.0" layoutY="-2.0" text="Ver Notificaciones">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="labelLikesPublicacionVendedor5" alignment="TOP_LEFT" layoutX="5.0" layoutY="7.0" prefHeight="165.0" prefWidth="182.0" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                              <TitledPane animated="false" expanded="false" layoutX="754.0" layoutY="214.0" text="Ver Mensajes">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="labelMensajesVendedor5" alignment="TOP_LEFT" layoutX="5.0" layoutY="7.0" prefHeight="165.0" prefWidth="182.0" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Vendedor 6">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="942.0">
+                     <children>
+                        <AnchorPane layoutX="2.0" layoutY="2.0" prefHeight="764.0" prefWidth="1117.0">
+                           <children>
+                              <Label layoutX="11.0" layoutY="2.0" prefHeight="17.0" prefWidth="77.0" text="Vendedor 6:">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <TabPane layoutX="673.0" layoutY="412.0" prefHeight="333.0" prefWidth="416.0" tabClosingPolicy="UNAVAILABLE">
+                                 <tabs>
+                                    <Tab text="Lista de contactos">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TableView fx:id="tableContactosVendedor6" layoutX="61.0" layoutY="39.0" prefHeight="177.0" prefWidth="305.0" style="-fx-background-color: #4452F6;">
+                                                   <columns>
+                                                      <TableColumn fx:id="columnNombreContactosVendedor6" minWidth="0.0" prefWidth="151.0" text="Nombre" />
+                                                      <TableColumn fx:id="columnApellidoContactosVendedor6" prefWidth="147.0" text="Apellido" />
+                                                   </columns>
+                                                </TableView>
+                                                <Button fx:id="btnEliminarContactoVendedor6" layoutX="147.0" layoutY="248.0" mnemonicParsing="false" onAction="#eliminarContactoVendedor6Action" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #4452F6;" text="Eliminar Contacto" textFill="WHITE" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab text="Sugerencia de contactos">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <Button fx:id="btnAgregarContactoSugerido6" layoutX="150.0" layoutY="248.0" mnemonicParsing="false" onAction="#agregarContactoSugeridoAction6" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #4452F6;" text="Agregar Contacto" textFill="WHITE" />
+                                                <TableView fx:id="tableSugeridosVendedor6" layoutX="67.0" layoutY="41.0" prefHeight="177.0" prefWidth="299.0" style="-fx-background-color: #4452F6;">
+                                                   <columns>
+                                                      <TableColumn fx:id="columnNombreSugeridosVendedor6" minWidth="0.0" prefWidth="150.0" text="Nombre" />
+                                                      <TableColumn fx:id="columnApellidoSugeridosVendedor6" prefWidth="139.0" text="Apellido" />
+                                                   </columns>
+                                                </TableView>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab text="Búsqueda de contactos">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TableView fx:id="tableBusquedaContactos6" layoutX="62.0" layoutY="64.0" prefHeight="177.0" prefWidth="293.0" style="-fx-background-color: #4452F6;">
+                                                   <columns>
+                                                      <TableColumn fx:id="columnNombreContactoBusqueda6" minWidth="0.0" prefWidth="144.0" text="Nombre" />
+                                                      <TableColumn fx:id="columnApellidoContactoBusqueda6" prefWidth="135.0" text="Apellido" />
+                                                   </columns>
+                                                </TableView>
+                                                <TextField fx:id="txtBuscarVendedor6" layoutX="138.0" layoutY="17.0" prefHeight="25.0" prefWidth="182.0" />
+                                                <Button fx:id="btnBuscarVendedor6" layoutX="338.0" layoutY="17.0" mnemonicParsing="false" onAction="#buscarVendedor6Action" prefHeight="25.0" prefWidth="57.0" style="-fx-background-color: #4452F6;" text="Buscar" textFill="WHITE" />
+                                                <Label layoutX="7.0" layoutY="21.0" text="Buscar vendedores:">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Button fx:id="btnAgregarContactoBusqueda6" layoutX="142.0" layoutY="258.0" mnemonicParsing="false" onAction="#agregarContactoBusquedaAction6" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #4452F6;" text="Agregar Contacto" textFill="WHITE" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                              </TabPane>
+                              <Label layoutX="10.0" layoutY="356.0" text="Informacion productos">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="26.0" prefHeight="26.0" prefWidth="185.0" text="Lista de publicaciones">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <TableView fx:id="tablePublicacionesVendedor6" layoutX="27.0" layoutY="85.0" prefHeight="214.0" prefWidth="657.0" style="-fx-background-color: #4452F6;">
+                                 <columns>
+                                    <TableColumn fx:id="columnFechaPublicacionVendedor6" prefWidth="130.0" text="Fecha publicacion" />
+                                    <TableColumn fx:id="columnNombreProductoPublicacionVendedor6" prefWidth="223.0" text="Nombre" />
+                                    <TableColumn fx:id="columnPrecioProductoPublicacionVendedor6" minWidth="0.0" prefWidth="231.0" text="Precio" />
+                                    <TableColumn fx:id="columnLikesVendedor6" prefWidth="64.0" text="Likes" />
+                                 </columns>
+                              </TableView>
+                              <Button fx:id="btnLikePublicacionVendedor6" layoutX="569.0" layoutY="312.0" mnemonicParsing="false" onAction="#likePublicacionVendedor6Action" prefHeight="25.0" prefWidth="79.0" style="-fx-background-color: #4452F6;" text="Me gusta" textFill="WHITE" />
+                              <TextField fx:id="txtComentarioPublicacionVendedor6" layoutX="754.0" layoutY="115.0" prefHeight="42.0" prefWidth="346.0" promptText="Agregue un comentario aqui..." />
+                              <Button fx:id="btnAgregarComentarioPublicacionVendedor6" layoutX="863.0" layoutY="167.0" mnemonicParsing="false" onAction="#agregarComentarioPublicacionVendedor6" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #4452F6;" text="Agregar Comentario" textFill="WHITE" />
+                              <Separator layoutX="-3.0" layoutY="340.0" prefHeight="11.0" prefWidth="1117.0" />
+                              <Separator layoutX="553.0" layoutY="348.0" orientation="VERTICAL" prefHeight="414.0" prefWidth="0.0" />
+                              <Separator layoutX="1.0" layoutY="378.0" prefHeight="11.0" prefWidth="1117.0" />
+                              <Separator layoutX="-1.0" layoutY="21.0" prefHeight="11.0" prefWidth="1117.0" />
+                              <Separator layoutX="-1.0" layoutY="47.0" prefHeight="9.0" prefWidth="1117.0" />
+                              <Button fx:id="btnActualizarPublicacionVendedor6" layoutX="57.0" layoutY="312.0" mnemonicParsing="false" onAction="#actualizarPublicacionVendedor6Action" prefHeight="25.0" prefWidth="138.0" style="-fx-background-color: #4452F6;" text="Actualizar Publicación" textFill="WHITE" />
+                              <Button fx:id="btnEliminarPublicacionVendedor6" layoutX="294.0" layoutY="312.0" mnemonicParsing="false" onAction="#eliminarPublicacionVendedor6Action" prefHeight="25.0" prefWidth="124.0" style="-fx-background-color: #4452F6;" text="Eliminar Publicación" textFill="WHITE" />
+                              <TabPane layoutX="3.0" layoutY="390.0" prefHeight="331.0" prefWidth="543.0" tabClosingPolicy="UNAVAILABLE">
+                                 <tabs>
+                                    <Tab text="CRUD">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <ImageView fitHeight="121.0" fitWidth="196.0" layoutX="194.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" />
+                                                <Label layoutX="42.0" layoutY="172.0" text="Nombre:" />
+                                                <TextField fx:id="txtNombreProductoVendedor6" layoutX="98.0" layoutY="168.0" prefHeight="25.0" prefWidth="165.0" promptText="Ingrese nombre del producto..." />
+                                                <Label layoutX="42.0" layoutY="208.0" prefHeight="17.0" prefWidth="56.0" text="Categoria:" />
+                                                <Label layoutX="293.0" layoutY="172.0" text="Precio:" />
+                                                <Label layoutX="292.0" layoutY="208.0" text="Estado:" />
+                                                <TextField fx:id="txtPrecioProductoVendedor6" layoutX="339.0" layoutY="168.0" prefHeight="25.0" prefWidth="165.0" promptText="Ingrese precio del producto..." />
+                                                <ComboBox fx:id="comboBoxCategoriaVendedor6" layoutX="98.0" layoutY="204.0" prefHeight="25.0" prefWidth="165.0" promptText="Selecciones Categoria" />
+                                                <ComboBox fx:id="comboBoxEstadoVendedor6" layoutX="339.0" layoutY="204.0" prefHeight="25.0" prefWidth="165.0" promptText="Seleccione Estado" />
+                                                <Button fx:id="btnAgregarProductoVendedor6" layoutX="215.0" layoutY="256.0" mnemonicParsing="false" onAction="#agregarProductoVendedor6Action" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: #4452F6;" text="Agregar Producto" textFill="WHITE" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab text="Lista productos">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TableView fx:id="tableProductosVendedor6" layoutX="15.0" layoutY="15.0" prefHeight="213.0" prefWidth="500.0" style="-fx-background-color: #4452F6;">
+                                                   <columns>
+                                                      <TableColumn fx:id="columnNombreProductoVendedor6" prefWidth="90.0" text="Nombre" />
+                                                      <TableColumn fx:id="columnPrecioProductoVendedor6" prefWidth="98.0" text="Precio" />
+                                                      <TableColumn fx:id="columnCategoriaProductoVendedor6" prefWidth="97.0" text="Categoria" />
+                                                      <TableColumn fx:id="columnEstadoProductoVendedor6" prefWidth="107.0" text="Estado" />
+                                                      <TableColumn fx:id="columnFechaProductoVendedor6" prefWidth="129.0" text="Fecha" />
+                                                   </columns>
+                                                </TableView>
+                                                <Button fx:id="btnPublicarProductoVendedor6" layoutX="399.0" layoutY="247.0" mnemonicParsing="false" onAction="#publicarProductoVendedor6Action" prefHeight="25.0" prefWidth="116.0" style="-fx-background-color: #4452F6;" text="Publicar Producto" textFill="WHITE" />
+                                                <Button fx:id="btnActualizarProductoVendedor6" layoutX="15.0" layoutY="247.0" mnemonicParsing="false" onAction="#actualizarProductoVendedor6Action" prefHeight="25.0" prefWidth="139.0" style="-fx-background-color: #4452F6;" text="Actualizar Producto" textFill="WHITE" />
+                                                <Button fx:id="btnEliminarProductoVendedor6" layoutX="212.0" layoutY="247.0" mnemonicParsing="false" onAction="#eliminarProductoVendedor6Action" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #4452F6;" text="Eliminar Producto" textFill="WHITE" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                              </TabPane>
+                              <TextField fx:id="txtMensajesVendedor6" layoutX="757.0" layoutY="256.0" prefHeight="43.0" prefWidth="344.0" promptText="Deje un mensaje al vendedor aqui..." />
+                              <Button fx:id="btnEnviarMensajeVendedor6" layoutX="877.0" layoutY="310.0" mnemonicParsing="false" onAction="#enviarMensajeVendedor6Action" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #4452F6;" text="Enviar Mensaje" textFill="WHITE" />
+                              <Label layoutX="778.0" layoutY="356.0" text="Informacion Contactos">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <TitledPane animated="false" expanded="false" layoutX="754.0" layoutY="73.0" text="Ver comentarios">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="labelComentariosPublicacionVendedor6" alignment="TOP_LEFT" layoutX="5.0" layoutY="7.0" prefHeight="165.0" prefWidth="182.0" text="Comentarios:" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                              <TitledPane animated="false" expanded="false" layoutX="912.0" layoutY="-2.0" text="Ver Notificaciones">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="labelLikesPublicacionVendedor6" alignment="TOP_LEFT" layoutX="5.0" layoutY="7.0" prefHeight="165.0" prefWidth="182.0" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                              <TitledPane animated="false" expanded="false" layoutX="754.0" layoutY="214.0" text="Ver Mensajes">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="labelMensajesVendedor6" alignment="TOP_LEFT" layoutX="5.0" layoutY="7.0" prefHeight="165.0" prefWidth="182.0" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Vendedor 7">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="942.0">
+                     <children>
+                        <AnchorPane layoutX="2.0" layoutY="2.0" prefHeight="764.0" prefWidth="1117.0">
+                           <children>
+                              <Label layoutX="11.0" layoutY="2.0" prefHeight="17.0" prefWidth="77.0" text="Vendedor 7:">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <TabPane layoutX="673.0" layoutY="412.0" prefHeight="333.0" prefWidth="416.0" tabClosingPolicy="UNAVAILABLE">
+                                 <tabs>
+                                    <Tab text="Lista de contactos">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TableView fx:id="tableContactosVendedor7" layoutX="61.0" layoutY="39.0" prefHeight="177.0" prefWidth="305.0" style="-fx-background-color: #4452F6;">
+                                                   <columns>
+                                                      <TableColumn fx:id="columnNombreContactosVendedor7" minWidth="0.0" prefWidth="151.0" text="Nombre" />
+                                                      <TableColumn fx:id="columnApellidoContactosVendedor7" prefWidth="147.0" text="Apellido" />
+                                                   </columns>
+                                                </TableView>
+                                                <Button fx:id="btnEliminarContactoVendedor7" layoutX="147.0" layoutY="248.0" mnemonicParsing="false" onAction="#eliminarContactoVendedor7Action" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #4452F6;" text="Eliminar Contacto" textFill="WHITE" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab text="Sugerencia de contactos">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <Button fx:id="btnAgregarContactoSugerido7" layoutX="150.0" layoutY="248.0" mnemonicParsing="false" onAction="#agregarContactoSugeridoAction7" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #4452F6;" text="Agregar Contacto" textFill="WHITE" />
+                                                <TableView fx:id="tableSugeridosVendedor7" layoutX="67.0" layoutY="41.0" prefHeight="177.0" prefWidth="299.0" style="-fx-background-color: #4452F6;">
+                                                   <columns>
+                                                      <TableColumn fx:id="columnNombreSugeridosVendedor7" minWidth="0.0" prefWidth="150.0" text="Nombre" />
+                                                      <TableColumn fx:id="columnApellidoSugeridosVendedor7" prefWidth="139.0" text="Apellido" />
+                                                   </columns>
+                                                </TableView>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab text="Búsqueda de contactos">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TableView fx:id="tableBusquedaContactos7" layoutX="62.0" layoutY="64.0" prefHeight="177.0" prefWidth="293.0" style="-fx-background-color: #4452F6;">
+                                                   <columns>
+                                                      <TableColumn fx:id="columnNombreContactoBusqueda7" minWidth="0.0" prefWidth="144.0" text="Nombre" />
+                                                      <TableColumn fx:id="columnApellidoContactoBusqueda7" prefWidth="135.0" text="Apellido" />
+                                                   </columns>
+                                                </TableView>
+                                                <TextField fx:id="txtBuscarVendedor7" layoutX="138.0" layoutY="17.0" prefHeight="25.0" prefWidth="182.0" />
+                                                <Button fx:id="btnBuscarVendedor7" layoutX="338.0" layoutY="17.0" mnemonicParsing="false" onAction="#buscarVendedor7Action" prefHeight="25.0" prefWidth="57.0" style="-fx-background-color: #4452F6;" text="Buscar" textFill="WHITE" />
+                                                <Label layoutX="7.0" layoutY="21.0" text="Buscar vendedores:">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Button fx:id="btnAgregarContactoBusqueda7" layoutX="142.0" layoutY="258.0" mnemonicParsing="false" onAction="#agregarContactoBusquedaAction7" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #4452F6;" text="Agregar Contacto" textFill="WHITE" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                              </TabPane>
+                              <Label layoutX="10.0" layoutY="356.0" text="Informacion productos">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="26.0" prefHeight="26.0" prefWidth="185.0" text="Lista de publicaciones">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <TableView fx:id="tablePublicacionesVendedor7" layoutX="27.0" layoutY="85.0" prefHeight="214.0" prefWidth="657.0" style="-fx-background-color: #4452F6;">
+                                 <columns>
+                                    <TableColumn fx:id="columnFechaPublicacionVendedor7" prefWidth="130.0" text="Fecha publicacion" />
+                                    <TableColumn fx:id="columnNombreProductoPublicacionVendedor7" prefWidth="223.0" text="Nombre" />
+                                    <TableColumn fx:id="columnPrecioProductoPublicacionVendedor7" minWidth="0.0" prefWidth="231.0" text="Precio" />
+                                    <TableColumn fx:id="columnLikesVendedor7" prefWidth="64.0" text="Likes" />
+                                 </columns>
+                              </TableView>
+                              <Button fx:id="btnLikePublicacionVendedor7" layoutX="569.0" layoutY="312.0" mnemonicParsing="false" onAction="#likePublicacionVendedor7Action" prefHeight="25.0" prefWidth="79.0" style="-fx-background-color: #4452F6;" text="Me gusta" textFill="WHITE" />
+                              <TextField fx:id="txtComentarioPublicacionVendedor7" layoutX="754.0" layoutY="115.0" prefHeight="42.0" prefWidth="346.0" promptText="Agregue un comentario aqui..." />
+                              <Button fx:id="btnAgregarComentarioPublicacionVendedor7" layoutX="863.0" layoutY="167.0" mnemonicParsing="false" onAction="#agregarComentarioPublicacionVendedor7" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #4452F6;" text="Agregar Comentario" textFill="WHITE" />
+                              <Separator layoutX="-3.0" layoutY="340.0" prefHeight="11.0" prefWidth="1117.0" />
+                              <Separator layoutX="553.0" layoutY="348.0" orientation="VERTICAL" prefHeight="414.0" prefWidth="0.0" />
+                              <Separator layoutX="1.0" layoutY="378.0" prefHeight="11.0" prefWidth="1117.0" />
+                              <Separator layoutX="-1.0" layoutY="21.0" prefHeight="11.0" prefWidth="1117.0" />
+                              <Separator layoutX="-1.0" layoutY="47.0" prefHeight="9.0" prefWidth="1117.0" />
+                              <Button fx:id="btnActualizarPublicacionVendedor7" layoutX="57.0" layoutY="312.0" mnemonicParsing="false" onAction="#actualizarPublicacionVendedor7Action" prefHeight="25.0" prefWidth="138.0" style="-fx-background-color: #4452F6;" text="Actualizar Publicación" textFill="WHITE" />
+                              <Button fx:id="btnEliminarPublicacionVendedor7" layoutX="294.0" layoutY="312.0" mnemonicParsing="false" onAction="#eliminarPublicacionVendedor7Action" prefHeight="25.0" prefWidth="124.0" style="-fx-background-color: #4452F6;" text="Eliminar Publicación" textFill="WHITE" />
+                              <TabPane layoutX="3.0" layoutY="390.0" prefHeight="331.0" prefWidth="543.0" tabClosingPolicy="UNAVAILABLE">
+                                 <tabs>
+                                    <Tab text="CRUD">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <ImageView fitHeight="121.0" fitWidth="196.0" layoutX="194.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" />
+                                                <Label layoutX="42.0" layoutY="172.0" text="Nombre:" />
+                                                <TextField fx:id="txtNombreProductoVendedor7" layoutX="98.0" layoutY="168.0" prefHeight="25.0" prefWidth="165.0" promptText="Ingrese nombre del producto..." />
+                                                <Label layoutX="42.0" layoutY="208.0" prefHeight="17.0" prefWidth="56.0" text="Categoria:" />
+                                                <Label layoutX="293.0" layoutY="172.0" text="Precio:" />
+                                                <Label layoutX="292.0" layoutY="208.0" text="Estado:" />
+                                                <TextField fx:id="txtPrecioProductoVendedor7" layoutX="339.0" layoutY="168.0" prefHeight="25.0" prefWidth="165.0" promptText="Ingrese precio del producto..." />
+                                                <ComboBox fx:id="comboBoxCategoriaVendedor7" layoutX="98.0" layoutY="204.0" prefHeight="25.0" prefWidth="165.0" promptText="Selecciones Categoria" />
+                                                <ComboBox fx:id="comboBoxEstadoVendedor7" layoutX="339.0" layoutY="204.0" prefHeight="25.0" prefWidth="165.0" promptText="Seleccione Estado" />
+                                                <Button fx:id="btnAgregarProductoVendedor7" layoutX="215.0" layoutY="256.0" mnemonicParsing="false" onAction="#agregarProductoVendedor7Action" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: #4452F6;" text="Agregar Producto" textFill="WHITE" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab text="Lista productos">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TableView fx:id="tableProductosVendedor7" layoutX="15.0" layoutY="15.0" prefHeight="213.0" prefWidth="500.0" style="-fx-background-color: #4452F6;">
+                                                   <columns>
+                                                      <TableColumn fx:id="columnNombreProductoVendedor7" prefWidth="90.0" text="Nombre" />
+                                                      <TableColumn fx:id="columnPrecioProductoVendedor7" prefWidth="98.0" text="Precio" />
+                                                      <TableColumn fx:id="columnCategoriaProductoVendedor7" prefWidth="97.0" text="Categoria" />
+                                                      <TableColumn fx:id="columnEstadoProductoVendedor7" prefWidth="107.0" text="Estado" />
+                                                      <TableColumn fx:id="columnFechaProductoVendedor7" prefWidth="129.0" text="Fecha" />
+                                                   </columns>
+                                                </TableView>
+                                                <Button fx:id="btnPublicarProductoVendedor7" layoutX="399.0" layoutY="247.0" mnemonicParsing="false" onAction="#publicarProductoVendedor7Action" prefHeight="25.0" prefWidth="116.0" style="-fx-background-color: #4452F6;" text="Publicar Producto" textFill="WHITE" />
+                                                <Button fx:id="btnActualizarProductoVendedor7" layoutX="15.0" layoutY="247.0" mnemonicParsing="false" onAction="#actualizarProductoVendedor7Action" prefHeight="25.0" prefWidth="139.0" style="-fx-background-color: #4452F6;" text="Actualizar Producto" textFill="WHITE" />
+                                                <Button fx:id="btnEliminarProductoVendedor7" layoutX="212.0" layoutY="247.0" mnemonicParsing="false" onAction="#eliminarProductoVendedor7Action" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #4452F6;" text="Eliminar Producto" textFill="WHITE" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                              </TabPane>
+                              <TextField fx:id="txtMensajesVendedor7" layoutX="757.0" layoutY="256.0" prefHeight="43.0" prefWidth="344.0" promptText="Deje un mensaje al vendedor aqui..." />
+                              <Button fx:id="btnEnviarMensajeVendedor7" layoutX="877.0" layoutY="310.0" mnemonicParsing="false" onAction="#enviarMensajeVendedor7Action" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #4452F6;" text="Enviar Mensaje" textFill="WHITE" />
+                              <Label layoutX="778.0" layoutY="356.0" text="Informacion Contactos">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <TitledPane animated="false" expanded="false" layoutX="754.0" layoutY="73.0" text="Ver comentarios">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="labelComentariosPublicacionVendedor7" alignment="TOP_LEFT" layoutX="5.0" layoutY="7.0" prefHeight="165.0" prefWidth="182.0" text="Comentarios:" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                              <TitledPane animated="false" expanded="false" layoutX="912.0" layoutY="-2.0" text="Ver Notificaciones">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="labelLikesPublicacionVendedor7" alignment="TOP_LEFT" layoutX="5.0" layoutY="7.0" prefHeight="165.0" prefWidth="182.0" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                              <TitledPane animated="false" expanded="false" layoutX="754.0" layoutY="214.0" text="Ver Mensajes">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="labelMensajesVendedor7" alignment="TOP_LEFT" layoutX="5.0" layoutY="7.0" prefHeight="165.0" prefWidth="182.0" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Vendedor 8">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="942.0">
+                     <children>
+                        <AnchorPane layoutX="2.0" layoutY="2.0" prefHeight="764.0" prefWidth="1117.0">
+                           <children>
+                              <Label layoutX="11.0" layoutY="2.0" prefHeight="17.0" prefWidth="77.0" text="Vendedor 8:">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <TabPane layoutX="673.0" layoutY="412.0" prefHeight="333.0" prefWidth="416.0" tabClosingPolicy="UNAVAILABLE">
+                                 <tabs>
+                                    <Tab text="Lista de contactos">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TableView fx:id="tableContactosVendedor8" layoutX="61.0" layoutY="39.0" prefHeight="177.0" prefWidth="305.0" style="-fx-background-color: #4452F6;">
+                                                   <columns>
+                                                      <TableColumn fx:id="columnNombreContactosVendedor8" minWidth="0.0" prefWidth="151.0" text="Nombre" />
+                                                      <TableColumn fx:id="columnApellidoContactosVendedor8" prefWidth="147.0" text="Apellido" />
+                                                   </columns>
+                                                </TableView>
+                                                <Button fx:id="btnEliminarContactoVendedor8" layoutX="147.0" layoutY="248.0" mnemonicParsing="false" onAction="#eliminarContactoVendedor8Action" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #4452F6;" text="Eliminar Contacto" textFill="WHITE" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab text="Sugerencia de contactos">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <Button fx:id="btnAgregarContactoSugerido8" layoutX="150.0" layoutY="248.0" mnemonicParsing="false" onAction="#agregarContactoSugeridoAction8" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #4452F6;" text="Agregar Contacto" textFill="WHITE" />
+                                                <TableView fx:id="tableSugeridosVendedor8" layoutX="67.0" layoutY="41.0" prefHeight="177.0" prefWidth="299.0" style="-fx-background-color: #4452F6;">
+                                                   <columns>
+                                                      <TableColumn fx:id="columnNombreSugeridosVendedor8" minWidth="0.0" prefWidth="150.0" text="Nombre" />
+                                                      <TableColumn fx:id="columnApellidoSugeridosVendedor8" prefWidth="139.0" text="Apellido" />
+                                                   </columns>
+                                                </TableView>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab text="Búsqueda de contactos">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TableView fx:id="tableBusquedaContactos8" layoutX="62.0" layoutY="64.0" prefHeight="177.0" prefWidth="293.0" style="-fx-background-color: #4452F6;">
+                                                   <columns>
+                                                      <TableColumn fx:id="columnNombreContactoBusqueda8" minWidth="0.0" prefWidth="144.0" text="Nombre" />
+                                                      <TableColumn fx:id="columnApellidoContactoBusqueda8" prefWidth="135.0" text="Apellido" />
+                                                   </columns>
+                                                </TableView>
+                                                <TextField fx:id="txtBuscarVendedor8" layoutX="138.0" layoutY="17.0" prefHeight="25.0" prefWidth="182.0" />
+                                                <Button fx:id="btnBuscarVendedor8" layoutX="338.0" layoutY="17.0" mnemonicParsing="false" onAction="#buscarVendedor8Action" prefHeight="25.0" prefWidth="57.0" style="-fx-background-color: #4452F6;" text="Buscar" textFill="WHITE" />
+                                                <Label layoutX="7.0" layoutY="21.0" text="Buscar vendedores:">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Button fx:id="btnAgregarContactoBusqueda8" layoutX="142.0" layoutY="258.0" mnemonicParsing="false" onAction="#agregarContactoBusquedaAction8" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #4452F6;" text="Agregar Contacto" textFill="WHITE" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                              </TabPane>
+                              <Label layoutX="10.0" layoutY="356.0" text="Informacion productos">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="26.0" prefHeight="26.0" prefWidth="185.0" text="Lista de publicaciones">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <TableView fx:id="tablePublicacionesVendedor8" layoutX="27.0" layoutY="85.0" prefHeight="214.0" prefWidth="657.0" style="-fx-background-color: #4452F6;">
+                                 <columns>
+                                    <TableColumn fx:id="columnFechaPublicacionVendedor8" prefWidth="130.0" text="Fecha publicacion" />
+                                    <TableColumn fx:id="columnNombreProductoPublicacionVendedor8" prefWidth="223.0" text="Nombre" />
+                                    <TableColumn fx:id="columnPrecioProductoPublicacionVendedor8" minWidth="0.0" prefWidth="231.0" text="Precio" />
+                                    <TableColumn fx:id="columnLikesVendedor8" prefWidth="64.0" text="Likes" />
+                                 </columns>
+                              </TableView>
+                              <Button fx:id="btnLikePublicacionVendedor8" layoutX="569.0" layoutY="312.0" mnemonicParsing="false" onAction="#likePublicacionVendedor8Action" prefHeight="25.0" prefWidth="79.0" style="-fx-background-color: #4452F6;" text="Me gusta" textFill="WHITE" />
+                              <TextField fx:id="txtComentarioPublicacionVendedor8" layoutX="754.0" layoutY="115.0" prefHeight="42.0" prefWidth="346.0" promptText="Agregue un comentario aqui..." />
+                              <Button fx:id="btnAgregarComentarioPublicacionVendedor8" layoutX="863.0" layoutY="167.0" mnemonicParsing="false" onAction="#agregarComentarioPublicacionVendedor8" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #4452F6;" text="Agregar Comentario" textFill="WHITE" />
+                              <Separator layoutX="-3.0" layoutY="340.0" prefHeight="11.0" prefWidth="1117.0" />
+                              <Separator layoutX="553.0" layoutY="348.0" orientation="VERTICAL" prefHeight="414.0" prefWidth="0.0" />
+                              <Separator layoutX="1.0" layoutY="378.0" prefHeight="11.0" prefWidth="1117.0" />
+                              <Separator layoutX="-1.0" layoutY="21.0" prefHeight="11.0" prefWidth="1117.0" />
+                              <Separator layoutX="-1.0" layoutY="47.0" prefHeight="9.0" prefWidth="1117.0" />
+                              <Button fx:id="btnActualizarPublicacionVendedor8" layoutX="57.0" layoutY="312.0" mnemonicParsing="false" onAction="#actualizarPublicacionVendedor8Action" prefHeight="25.0" prefWidth="138.0" style="-fx-background-color: #4452F6;" text="Actualizar Publicación" textFill="WHITE" />
+                              <Button fx:id="btnEliminarPublicacionVendedor8" layoutX="294.0" layoutY="312.0" mnemonicParsing="false" onAction="#eliminarPublicacionVendedor8Action" prefHeight="25.0" prefWidth="124.0" style="-fx-background-color: #4452F6;" text="Eliminar Publicación" textFill="WHITE" />
+                              <TabPane layoutX="3.0" layoutY="390.0" prefHeight="331.0" prefWidth="543.0" tabClosingPolicy="UNAVAILABLE">
+                                 <tabs>
+                                    <Tab text="CRUD">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <ImageView fitHeight="121.0" fitWidth="196.0" layoutX="194.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" />
+                                                <Label layoutX="42.0" layoutY="172.0" text="Nombre:" />
+                                                <TextField fx:id="txtNombreProductoVendedor8" layoutX="98.0" layoutY="168.0" prefHeight="25.0" prefWidth="165.0" promptText="Ingrese nombre del producto..." />
+                                                <Label layoutX="42.0" layoutY="208.0" prefHeight="17.0" prefWidth="56.0" text="Categoria:" />
+                                                <Label layoutX="293.0" layoutY="172.0" text="Precio:" />
+                                                <Label layoutX="292.0" layoutY="208.0" text="Estado:" />
+                                                <TextField fx:id="txtPrecioProductoVendedor8" layoutX="339.0" layoutY="168.0" prefHeight="25.0" prefWidth="165.0" promptText="Ingrese precio del producto..." />
+                                                <ComboBox fx:id="comboBoxCategoriaVendedor8" layoutX="98.0" layoutY="204.0" prefHeight="25.0" prefWidth="165.0" promptText="Selecciones Categoria" />
+                                                <ComboBox fx:id="comboBoxEstadoVendedor8" layoutX="339.0" layoutY="204.0" prefHeight="25.0" prefWidth="165.0" promptText="Seleccione Estado" />
+                                                <Button fx:id="btnAgregarProductoVendedor8" layoutX="215.0" layoutY="256.0" mnemonicParsing="false" onAction="#agregarProductoVendedor8Action" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: #4452F6;" text="Agregar Producto" textFill="WHITE" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab text="Lista productos">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TableView fx:id="tableProductosVendedor8" layoutX="15.0" layoutY="15.0" prefHeight="213.0" prefWidth="500.0" style="-fx-background-color: #4452F6;">
+                                                   <columns>
+                                                      <TableColumn fx:id="columnNombreProductoVendedor8" prefWidth="90.0" text="Nombre" />
+                                                      <TableColumn fx:id="columnPrecioProductoVendedor8" prefWidth="98.0" text="Precio" />
+                                                      <TableColumn fx:id="columnCategoriaProductoVendedor8" prefWidth="97.0" text="Categoria" />
+                                                      <TableColumn fx:id="columnEstadoProductoVendedor8" prefWidth="107.0" text="Estado" />
+                                                      <TableColumn fx:id="columnFechaProductoVendedor8" prefWidth="129.0" text="Fecha" />
+                                                   </columns>
+                                                </TableView>
+                                                <Button fx:id="btnPublicarProductoVendedor8" layoutX="399.0" layoutY="247.0" mnemonicParsing="false" onAction="#publicarProductoVendedor8Action" prefHeight="25.0" prefWidth="116.0" style="-fx-background-color: #4452F6;" text="Publicar Producto" textFill="WHITE" />
+                                                <Button fx:id="btnActualizarProductoVendedor8" layoutX="15.0" layoutY="247.0" mnemonicParsing="false" onAction="#actualizarProductoVendedor8Action" prefHeight="25.0" prefWidth="139.0" style="-fx-background-color: #4452F6;" text="Actualizar Producto" textFill="WHITE" />
+                                                <Button fx:id="btnEliminarProductoVendedor8" layoutX="212.0" layoutY="247.0" mnemonicParsing="false" onAction="#eliminarProductoVendedor8Action" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #4452F6;" text="Eliminar Producto" textFill="WHITE" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                              </TabPane>
+                              <TextField fx:id="txtMensajesVendedor8" layoutX="757.0" layoutY="256.0" prefHeight="43.0" prefWidth="344.0" promptText="Deje un mensaje al vendedor aqui..." />
+                              <Button fx:id="btnEnviarMensajeVendedor8" layoutX="877.0" layoutY="310.0" mnemonicParsing="false" onAction="#enviarMensajeVendedor8Action" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #4452F6;" text="Enviar Mensaje" textFill="WHITE" />
+                              <Label layoutX="778.0" layoutY="356.0" text="Informacion Contactos">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <TitledPane animated="false" expanded="false" layoutX="754.0" layoutY="73.0" text="Ver comentarios">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="labelComentariosPublicacionVendedor8" alignment="TOP_LEFT" layoutX="5.0" layoutY="7.0" prefHeight="165.0" prefWidth="182.0" text="Comentarios:" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                              <TitledPane animated="false" expanded="false" layoutX="912.0" layoutY="-2.0" text="Ver Notificaciones">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="labelLikesPublicacionVendedor8" alignment="TOP_LEFT" layoutX="5.0" layoutY="7.0" prefHeight="165.0" prefWidth="182.0" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                              <TitledPane animated="false" expanded="false" layoutX="754.0" layoutY="214.0" text="Ver Mensajes">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="labelMensajesVendedor8" alignment="TOP_LEFT" layoutX="5.0" layoutY="7.0" prefHeight="165.0" prefWidth="182.0" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Vendedor 9">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="942.0">
+                     <children>
+                        <AnchorPane layoutX="2.0" layoutY="2.0" prefHeight="764.0" prefWidth="1117.0">
+                           <children>
+                              <Label layoutX="11.0" layoutY="2.0" prefHeight="17.0" prefWidth="77.0" text="Vendedor 9:">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <TabPane layoutX="673.0" layoutY="412.0" prefHeight="333.0" prefWidth="416.0" tabClosingPolicy="UNAVAILABLE">
+                                 <tabs>
+                                    <Tab text="Lista de contactos">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TableView fx:id="tableContactosVendedor9" layoutX="61.0" layoutY="39.0" prefHeight="177.0" prefWidth="305.0" style="-fx-background-color: #4452F6;">
+                                                   <columns>
+                                                      <TableColumn fx:id="columnNombreContactosVendedor9" minWidth="0.0" prefWidth="151.0" text="Nombre" />
+                                                      <TableColumn fx:id="columnApellidoContactosVendedor9" prefWidth="147.0" text="Apellido" />
+                                                   </columns>
+                                                </TableView>
+                                                <Button fx:id="btnEliminarContactoVendedor9" layoutX="147.0" layoutY="248.0" mnemonicParsing="false" onAction="#eliminarContactoVendedor9Action" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #4452F6;" text="Eliminar Contacto" textFill="WHITE" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab text="Sugerencia de contactos">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <Button fx:id="btnAgregarContactoSugerido9" layoutX="150.0" layoutY="248.0" mnemonicParsing="false" onAction="#agregarContactoSugeridoAction9" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #4452F6;" text="Agregar Contacto" textFill="WHITE" />
+                                                <TableView fx:id="tableSugeridosVendedor9" layoutX="67.0" layoutY="41.0" prefHeight="177.0" prefWidth="299.0" style="-fx-background-color: #4452F6;">
+                                                   <columns>
+                                                      <TableColumn fx:id="columnNombreSugeridosVendedor9" minWidth="0.0" prefWidth="150.0" text="Nombre" />
+                                                      <TableColumn fx:id="columnApellidoSugeridosVendedor9" prefWidth="139.0" text="Apellido" />
+                                                   </columns>
+                                                </TableView>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab text="Búsqueda de contactos">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TableView fx:id="tableBusquedaContactos9" layoutX="62.0" layoutY="64.0" prefHeight="177.0" prefWidth="293.0" style="-fx-background-color: #4452F6;">
+                                                   <columns>
+                                                      <TableColumn fx:id="columnNombreContactoBusqueda9" minWidth="0.0" prefWidth="144.0" text="Nombre" />
+                                                      <TableColumn fx:id="columnApellidoContactoBusqueda9" prefWidth="135.0" text="Apellido" />
+                                                   </columns>
+                                                </TableView>
+                                                <TextField fx:id="txtBuscarVendedor9" layoutX="138.0" layoutY="17.0" prefHeight="25.0" prefWidth="182.0" />
+                                                <Button fx:id="btnBuscarVendedor9" layoutX="338.0" layoutY="17.0" mnemonicParsing="false" onAction="#buscarVendedor9Action" prefHeight="25.0" prefWidth="57.0" style="-fx-background-color: #4452F6;" text="Buscar" textFill="WHITE" />
+                                                <Label layoutX="7.0" layoutY="21.0" text="Buscar vendedores:">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Button fx:id="btnAgregarContactoBusqueda9" layoutX="142.0" layoutY="258.0" mnemonicParsing="false" onAction="#agregarContactoBusquedaAction9" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #4452F6;" text="Agregar Contacto" textFill="WHITE" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                              </TabPane>
+                              <Label layoutX="10.0" layoutY="356.0" text="Informacion productos">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="26.0" prefHeight="26.0" prefWidth="185.0" text="Lista de publicaciones">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <TableView fx:id="tablePublicacionesVendedor9" layoutX="27.0" layoutY="85.0" prefHeight="214.0" prefWidth="657.0" style="-fx-background-color: #4452F6;">
+                                 <columns>
+                                    <TableColumn fx:id="columnFechaPublicacionVendedor9" prefWidth="130.0" text="Fecha publicacion" />
+                                    <TableColumn fx:id="columnNombreProductoPublicacionVendedor9" prefWidth="223.0" text="Nombre" />
+                                    <TableColumn fx:id="columnPrecioProductoPublicacionVendedor9" minWidth="0.0" prefWidth="231.0" text="Precio" />
+                                    <TableColumn fx:id="columnLikesVendedor9" prefWidth="64.0" text="Likes" />
+                                 </columns>
+                              </TableView>
+                              <Button fx:id="btnLikePublicacionVendedor9" layoutX="569.0" layoutY="312.0" mnemonicParsing="false" onAction="#likePublicacionVendedor9Action" prefHeight="25.0" prefWidth="79.0" style="-fx-background-color: #4452F6;" text="Me gusta" textFill="WHITE" />
+                              <TextField fx:id="txtComentarioPublicacionVendedor9" layoutX="754.0" layoutY="115.0" prefHeight="42.0" prefWidth="346.0" promptText="Agregue un comentario aqui..." />
+                              <Button fx:id="btnAgregarComentarioPublicacionVendedor9" layoutX="863.0" layoutY="167.0" mnemonicParsing="false" onAction="#agregarComentarioPublicacionVendedor9" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #4452F6;" text="Agregar Comentario" textFill="WHITE" />
+                              <Separator layoutX="-3.0" layoutY="340.0" prefHeight="11.0" prefWidth="1117.0" />
+                              <Separator layoutX="553.0" layoutY="348.0" orientation="VERTICAL" prefHeight="414.0" prefWidth="0.0" />
+                              <Separator layoutX="1.0" layoutY="378.0" prefHeight="11.0" prefWidth="1117.0" />
+                              <Separator layoutX="-1.0" layoutY="21.0" prefHeight="11.0" prefWidth="1117.0" />
+                              <Separator layoutX="-1.0" layoutY="47.0" prefHeight="9.0" prefWidth="1117.0" />
+                              <Button fx:id="btnActualizarPublicacionVendedor9" layoutX="57.0" layoutY="312.0" mnemonicParsing="false" onAction="#actualizarPublicacionVendedor9Action" prefHeight="25.0" prefWidth="138.0" style="-fx-background-color: #4452F6;" text="Actualizar Publicación" textFill="WHITE" />
+                              <Button fx:id="btnEliminarPublicacionVendedor9" layoutX="294.0" layoutY="312.0" mnemonicParsing="false" onAction="#eliminarPublicacionVendedor9Action" prefHeight="25.0" prefWidth="124.0" style="-fx-background-color: #4452F6;" text="Eliminar Publicación" textFill="WHITE" />
+                              <TabPane layoutX="3.0" layoutY="390.0" prefHeight="331.0" prefWidth="543.0" tabClosingPolicy="UNAVAILABLE">
+                                 <tabs>
+                                    <Tab text="CRUD">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <ImageView fitHeight="121.0" fitWidth="196.0" layoutX="194.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" />
+                                                <Label layoutX="42.0" layoutY="172.0" text="Nombre:" />
+                                                <TextField fx:id="txtNombreProductoVendedor9" layoutX="98.0" layoutY="168.0" prefHeight="25.0" prefWidth="165.0" promptText="Ingrese nombre del producto..." />
+                                                <Label layoutX="42.0" layoutY="208.0" prefHeight="17.0" prefWidth="56.0" text="Categoria:" />
+                                                <Label layoutX="293.0" layoutY="172.0" text="Precio:" />
+                                                <Label layoutX="292.0" layoutY="208.0" text="Estado:" />
+                                                <TextField fx:id="txtPrecioProductoVendedor9" layoutX="339.0" layoutY="168.0" prefHeight="25.0" prefWidth="165.0" promptText="Ingrese precio del producto..." />
+                                                <ComboBox fx:id="comboBoxCategoriaVendedor9" layoutX="98.0" layoutY="204.0" prefHeight="25.0" prefWidth="165.0" promptText="Selecciones Categoria" />
+                                                <ComboBox fx:id="comboBoxEstadoVendedor9" layoutX="339.0" layoutY="204.0" prefHeight="25.0" prefWidth="165.0" promptText="Seleccione Estado" />
+                                                <Button fx:id="btnAgregarProductoVendedor9" layoutX="215.0" layoutY="256.0" mnemonicParsing="false" onAction="#agregarProductoVendedor9Action" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: #4452F6;" text="Agregar Producto" textFill="WHITE" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab text="Lista productos">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TableView fx:id="tableProductosVendedor9" layoutX="15.0" layoutY="15.0" prefHeight="213.0" prefWidth="500.0" style="-fx-background-color: #4452F6;">
+                                                   <columns>
+                                                      <TableColumn fx:id="columnNombreProductoVendedor9" prefWidth="90.0" text="Nombre" />
+                                                      <TableColumn fx:id="columnPrecioProductoVendedor9" prefWidth="98.0" text="Precio" />
+                                                      <TableColumn fx:id="columnCategoriaProductoVendedor9" prefWidth="97.0" text="Categoria" />
+                                                      <TableColumn fx:id="columnEstadoProductoVendedor9" prefWidth="107.0" text="Estado" />
+                                                      <TableColumn fx:id="columnFechaProductoVendedor9" prefWidth="129.0" text="Fecha" />
+                                                   </columns>
+                                                </TableView>
+                                                <Button fx:id="btnPublicarProductoVendedor9" layoutX="399.0" layoutY="247.0" mnemonicParsing="false" onAction="#publicarProductoVendedor9Action" prefHeight="25.0" prefWidth="116.0" style="-fx-background-color: #4452F6;" text="Publicar Producto" textFill="WHITE" />
+                                                <Button fx:id="btnActualizarProductoVendedor9" layoutX="15.0" layoutY="247.0" mnemonicParsing="false" onAction="#actualizarProductoVendedor9Action" prefHeight="25.0" prefWidth="139.0" style="-fx-background-color: #4452F6;" text="Actualizar Producto" textFill="WHITE" />
+                                                <Button fx:id="btnEliminarProductoVendedor9" layoutX="212.0" layoutY="247.0" mnemonicParsing="false" onAction="#eliminarProductoVendedor9Action" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #4452F6;" text="Eliminar Producto" textFill="WHITE" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                              </TabPane>
+                              <TextField fx:id="txtMensajesVendedor9" layoutX="757.0" layoutY="256.0" prefHeight="43.0" prefWidth="344.0" promptText="Deje un mensaje al vendedor aqui..." />
+                              <Button fx:id="btnEnviarMensajeVendedor9" layoutX="877.0" layoutY="310.0" mnemonicParsing="false" onAction="#enviarMensajeVendedor9Action" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #4452F6;" text="Enviar Mensaje" textFill="WHITE" />
+                              <Label layoutX="778.0" layoutY="356.0" text="Informacion Contactos">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <TitledPane animated="false" expanded="false" layoutX="754.0" layoutY="73.0" text="Ver comentarios">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="labelComentariosPublicacionVendedor9" alignment="TOP_LEFT" layoutX="5.0" layoutY="7.0" prefHeight="165.0" prefWidth="182.0" text="Comentarios:" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                              <TitledPane animated="false" expanded="false" layoutX="912.0" layoutY="-2.0" text="Ver Notificaciones">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="labelLikesPublicacionVendedor9" alignment="TOP_LEFT" layoutX="5.0" layoutY="7.0" prefHeight="165.0" prefWidth="182.0" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                              <TitledPane animated="false" expanded="false" layoutX="754.0" layoutY="214.0" text="Ver Mensajes">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="labelMensajesVendedor9" alignment="TOP_LEFT" layoutX="5.0" layoutY="7.0" prefHeight="165.0" prefWidth="182.0" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Vendedor 10">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="942.0">
+                     <children>
+                        <AnchorPane layoutX="2.0" layoutY="2.0" prefHeight="764.0" prefWidth="1117.0">
+                           <children>
+                              <Label layoutX="11.0" layoutY="2.0" prefHeight="17.0" prefWidth="77.0" text="Vendedor 10:">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <TabPane layoutX="673.0" layoutY="412.0" prefHeight="333.0" prefWidth="416.0" tabClosingPolicy="UNAVAILABLE">
+                                 <tabs>
+                                    <Tab text="Lista de contactos">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TableView fx:id="tableContactosVendedor10" layoutX="61.0" layoutY="39.0" prefHeight="177.0" prefWidth="305.0" style="-fx-background-color: #4452F6;">
+                                                   <columns>
+                                                      <TableColumn fx:id="columnNombreContactosVendedor10" minWidth="0.0" prefWidth="151.0" text="Nombre" />
+                                                      <TableColumn fx:id="columnApellidoContactosVendedor10" prefWidth="147.0" text="Apellido" />
+                                                   </columns>
+                                                </TableView>
+                                                <Button fx:id="btnEliminarContactoVendedor10" layoutX="147.0" layoutY="248.0" mnemonicParsing="false" onAction="#eliminarContactoVendedor10Action" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #4452F6;" text="Eliminar Contacto" textFill="WHITE" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab text="Sugerencia de contactos">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <Button fx:id="btnAgregarContactoSugerido10" layoutX="150.0" layoutY="248.0" mnemonicParsing="false" onAction="#agregarContactoSugeridoAction10" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #4452F6;" text="Agregar Contacto" textFill="WHITE" />
+                                                <TableView fx:id="tableSugeridosVendedor10" layoutX="67.0" layoutY="41.0" prefHeight="177.0" prefWidth="299.0" style="-fx-background-color: #4452F6;">
+                                                   <columns>
+                                                      <TableColumn fx:id="columnNombreSugeridosVendedor10" minWidth="0.0" prefWidth="150.0" text="Nombre" />
+                                                      <TableColumn fx:id="columnApellidoSugeridosVendedor10" prefWidth="139.0" text="Apellido" />
+                                                   </columns>
+                                                </TableView>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab text="Búsqueda de contactos">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TableView fx:id="tableBusquedaContactos10" layoutX="62.0" layoutY="64.0" prefHeight="177.0" prefWidth="293.0" style="-fx-background-color: #4452F6;">
+                                                   <columns>
+                                                      <TableColumn fx:id="columnNombreContactoBusqueda10" minWidth="0.0" prefWidth="144.0" text="Nombre" />
+                                                      <TableColumn fx:id="columnApellidoContactoBusqueda10" prefWidth="135.0" text="Apellido" />
+                                                   </columns>
+                                                </TableView>
+                                                <TextField fx:id="txtBuscarVendedor10" layoutX="138.0" layoutY="17.0" prefHeight="25.0" prefWidth="182.0" />
+                                                <Button fx:id="btnBuscarVendedor10" layoutX="338.0" layoutY="17.0" mnemonicParsing="false" onAction="#buscarVendedor10Action" prefHeight="25.0" prefWidth="57.0" style="-fx-background-color: #4452F6;" text="Buscar" textFill="WHITE" />
+                                                <Label layoutX="7.0" layoutY="21.0" text="Buscar vendedores:">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Button fx:id="btnAgregarContactoBusqueda10" layoutX="142.0" layoutY="258.0" mnemonicParsing="false" onAction="#agregarContactoBusquedaAction10" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #4452F6;" text="Agregar Contacto" textFill="WHITE" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                              </TabPane>
+                              <Label layoutX="10.0" layoutY="356.0" text="Informacion productos">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="26.0" prefHeight="26.0" prefWidth="185.0" text="Lista de publicaciones">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <TableView fx:id="tablePublicacionesVendedor10" layoutX="27.0" layoutY="85.0" prefHeight="214.0" prefWidth="657.0" style="-fx-background-color: #4452F6;">
+                                 <columns>
+                                    <TableColumn fx:id="columnFechaPublicacionVendedor10" prefWidth="130.0" text="Fecha publicacion" />
+                                    <TableColumn fx:id="columnNombreProductoPublicacionVendedor10" prefWidth="223.0" text="Nombre" />
+                                    <TableColumn fx:id="columnPrecioProductoPublicacionVendedor10" minWidth="0.0" prefWidth="231.0" text="Precio" />
+                                    <TableColumn fx:id="columnLikesVendedor10" prefWidth="64.0" text="Likes" />
+                                 </columns>
+                              </TableView>
+                              <Button fx:id="btnLikePublicacionVendedor10" layoutX="569.0" layoutY="312.0" mnemonicParsing="false" onAction="#likePublicacionVendedor10Action" prefHeight="25.0" prefWidth="79.0" style="-fx-background-color: #4452F6;" text="Me gusta" textFill="WHITE" />
+                              <TextField fx:id="txtComentarioPublicacionVendedor10" layoutX="754.0" layoutY="115.0" prefHeight="42.0" prefWidth="346.0" promptText="Agregue un comentario aqui..." />
+                              <Button fx:id="btnAgregarComentarioPublicacionVendedor10" layoutX="863.0" layoutY="167.0" mnemonicParsing="false" onAction="#agregarComentarioPublicacionVendedor10" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #4452F6;" text="Agregar Comentario" textFill="WHITE" />
+                              <Separator layoutX="-3.0" layoutY="340.0" prefHeight="11.0" prefWidth="1117.0" />
+                              <Separator layoutX="553.0" layoutY="348.0" orientation="VERTICAL" prefHeight="414.0" prefWidth="0.0" />
+                              <Separator layoutX="1.0" layoutY="378.0" prefHeight="11.0" prefWidth="1117.0" />
+                              <Separator layoutX="-1.0" layoutY="21.0" prefHeight="11.0" prefWidth="1117.0" />
+                              <Separator layoutX="-1.0" layoutY="47.0" prefHeight="9.0" prefWidth="1117.0" />
+                              <Button fx:id="btnActualizarPublicacionVendedor10" layoutX="57.0" layoutY="312.0" mnemonicParsing="false" onAction="#actualizarPublicacionVendedor10Action" prefHeight="25.0" prefWidth="138.0" style="-fx-background-color: #4452F6;" text="Actualizar Publicación" textFill="WHITE" />
+                              <Button fx:id="btnEliminarPublicacionVendedor10" layoutX="294.0" layoutY="312.0" mnemonicParsing="false" onAction="#eliminarPublicacionVendedor10Action" prefHeight="25.0" prefWidth="124.0" style="-fx-background-color: #4452F6;" text="Eliminar Publicación" textFill="WHITE" />
+                              <TabPane layoutX="3.0" layoutY="390.0" prefHeight="331.0" prefWidth="543.0" tabClosingPolicy="UNAVAILABLE">
+                                 <tabs>
+                                    <Tab text="CRUD">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <ImageView fitHeight="121.0" fitWidth="196.0" layoutX="194.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" />
+                                                <Label layoutX="42.0" layoutY="172.0" text="Nombre:" />
+                                                <TextField fx:id="txtNombreProductoVendedor10" layoutX="98.0" layoutY="168.0" prefHeight="25.0" prefWidth="165.0" promptText="Ingrese nombre del producto..." />
+                                                <Label layoutX="42.0" layoutY="208.0" prefHeight="17.0" prefWidth="56.0" text="Categoria:" />
+                                                <Label layoutX="293.0" layoutY="172.0" text="Precio:" />
+                                                <Label layoutX="292.0" layoutY="208.0" text="Estado:" />
+                                                <TextField fx:id="txtPrecioProductoVendedor10" layoutX="339.0" layoutY="168.0" prefHeight="25.0" prefWidth="165.0" promptText="Ingrese precio del producto..." />
+                                                <ComboBox fx:id="comboBoxCategoriaVendedor10" layoutX="98.0" layoutY="204.0" prefHeight="25.0" prefWidth="165.0" promptText="Selecciones Categoria" />
+                                                <ComboBox fx:id="comboBoxEstadoVendedor10" layoutX="339.0" layoutY="204.0" prefHeight="25.0" prefWidth="165.0" promptText="Seleccione Estado" />
+                                                <Button fx:id="btnAgregarProductoVendedor10" layoutX="215.0" layoutY="256.0" mnemonicParsing="false" onAction="#agregarProductoVendedor10Action" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: #4452F6;" text="Agregar Producto" textFill="WHITE" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab text="Lista productos">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TableView fx:id="tableProductosVendedor10" layoutX="15.0" layoutY="15.0" prefHeight="213.0" prefWidth="500.0" style="-fx-background-color: #4452F6;">
+                                                   <columns>
+                                                      <TableColumn fx:id="columnNombreProductoVendedor10" prefWidth="90.0" text="Nombre" />
+                                                      <TableColumn fx:id="columnPrecioProductoVendedor10" prefWidth="98.0" text="Precio" />
+                                                      <TableColumn fx:id="columnCategoriaProductoVendedor10" prefWidth="97.0" text="Categoria" />
+                                                      <TableColumn fx:id="columnEstadoProductoVendedor10" prefWidth="107.0" text="Estado" />
+                                                      <TableColumn fx:id="columnFechaProductoVendedor10" prefWidth="129.0" text="Fecha" />
+                                                   </columns>
+                                                </TableView>
+                                                <Button fx:id="btnPublicarProductoVendedor10" layoutX="399.0" layoutY="247.0" mnemonicParsing="false" onAction="#publicarProductoVendedor10Action" prefHeight="25.0" prefWidth="116.0" style="-fx-background-color: #4452F6;" text="Publicar Producto" textFill="WHITE" />
+                                                <Button fx:id="btnActualizarProductoVendedor10" layoutX="15.0" layoutY="247.0" mnemonicParsing="false" onAction="#actualizarProductoVendedor10Action" prefHeight="25.0" prefWidth="139.0" style="-fx-background-color: #4452F6;" text="Actualizar Producto" textFill="WHITE" />
+                                                <Button fx:id="btnEliminarProductoVendedor10" layoutX="212.0" layoutY="247.0" mnemonicParsing="false" onAction="#eliminarProductoVendedor10Action" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #4452F6;" text="Eliminar Producto" textFill="WHITE" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                              </TabPane>
+                              <TextField fx:id="txtMensajesVendedor10" layoutX="757.0" layoutY="256.0" prefHeight="43.0" prefWidth="344.0" promptText="Deje un mensaje al vendedor aqui..." />
+                              <Button fx:id="btnEnviarMensajeVendedor10" layoutX="877.0" layoutY="310.0" mnemonicParsing="false" onAction="#enviarMensajeVendedor10Action" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #4452F6;" text="Enviar Mensaje" textFill="WHITE" />
+                              <Label layoutX="778.0" layoutY="356.0" text="Informacion Contactos">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <TitledPane animated="false" expanded="false" layoutX="754.0" layoutY="73.0" text="Ver comentarios">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="labelComentariosPublicacionVendedor10" alignment="TOP_LEFT" layoutX="5.0" layoutY="7.0" prefHeight="165.0" prefWidth="182.0" text="Comentarios:" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                              <TitledPane animated="false" expanded="false" layoutX="912.0" layoutY="-2.0" text="Ver Notificaciones">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="labelLikesPublicacionVendedor10" alignment="TOP_LEFT" layoutX="5.0" layoutY="7.0" prefHeight="165.0" prefWidth="182.0" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                              <TitledPane animated="false" expanded="false" layoutX="754.0" layoutY="214.0" text="Ver Mensajes">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="labelMensajesVendedor10" alignment="TOP_LEFT" layoutX="5.0" layoutY="7.0" prefHeight="165.0" prefWidth="182.0" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Button fx:id="btnCerrarSesion" layoutX="8.0" layoutY="8.0" mnemonicParsing="false" onAction="#cerrarSesionAction" style="-fx-background-color: #4452F6;" text="Cerrar Sesión" textFill="WHITE" />
+   </children>
+</AnchorPane>

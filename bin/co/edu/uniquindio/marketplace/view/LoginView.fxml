@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="408.0" prefWidth="472.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.marketplace.controllers.LoginController">
+   <children>
+      <Pane layoutX="14.0" layoutY="14.0" prefHeight="388.0" prefWidth="448.0" style="-fx-background-color: #CACACA;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="99.0" layoutY="21.0" text="MARKETPLACE" textFill="#4452f6" underline="true">
+               <font>
+                  <Font name="Snap ITC" size="30.0" />
+               </font>
+            </Label>
+            <Separator layoutX="14.0" layoutY="75.0" prefHeight="10.0" prefWidth="445.0" />
+            <AnchorPane layoutX="3.0" layoutY="80.0" prefHeight="320.0" prefWidth="466.0" style="-fx-background-color: #CACACA;">
+               <children>
+                  <Button fx:id="btnEntrarLogin" layoutX="197.0" layoutY="246.0" mnemonicParsing="false" onAction="#entrarLoginAction" prefHeight="33.0" prefWidth="73.0" style="-fx-background-color: #4452F6;" text="ENTRAR" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                  <Label layoutX="84.0" layoutY="186.0" text="Contraseña:">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="94.0" layoutY="126.0" text="Usuario:">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtUsuarioLogin" layoutX="172.0" layoutY="122.0" prefHeight="25.0" prefWidth="197.0" />
+                  <PasswordField fx:id="passTxtContraseñaLogin" layoutX="172.0" layoutY="182.0" prefHeight="25.0" prefWidth="197.0" />
+                  <Label layoutX="143.0" layoutY="32.0" text="INICIAR SESIÓN">
+                     <font>
+                        <Font name="Times New Roman" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,48 @@
+oct 25, 2021 10:20:18 PM co.edu.uniquindio.marketplace.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: Eliminacion,Se elimino vendedor,2021-10-25
+oct 25, 2021 10:20:46 PM co.edu.uniquindio.marketplace.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: Creacion,Se creo vendedor,2021-10-25
+oct 25, 2021 10:21:07 PM co.edu.uniquindio.marketplace.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: Eliminacion,Se elimino vendedor,2021-10-25
+oct 26, 2021 3:51:33 PM co.edu.uniquindio.marketplace.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: Creacion,Se creo vendedor,2021-10-26
+oct 26, 2021 3:56:49 PM co.edu.uniquindio.marketplace.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: Eliminacion,Se elimino vendedor,2021-10-26
+oct 26, 2021 3:57:13 PM co.edu.uniquindio.marketplace.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: Creacion,Se creo vendedor,2021-10-26
+oct 26, 2021 3:57:48 PM co.edu.uniquindio.marketplace.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: Eliminacion,Se elimino vendedor,2021-10-26
+oct 26, 2021 4:12:48 PM co.edu.uniquindio.marketplace.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: Creacion,Se creo vendedor,2021-10-26
+oct 26, 2021 4:45:32 PM co.edu.uniquindio.marketplace.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: Eliminacion,Se elimino vendedor,2021-10-26
+oct 26, 2021 4:46:10 PM co.edu.uniquindio.marketplace.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: Creacion,Se creo vendedor,2021-10-26
+oct 26, 2021 4:48:28 PM co.edu.uniquindio.marketplace.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: Eliminacion,Se elimino vendedor,2021-10-26
+oct 26, 2021 4:49:20 PM co.edu.uniquindio.marketplace.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: Creacion,Se creo vendedor,2021-10-26
+oct 26, 2021 4:51:58 PM co.edu.uniquindio.marketplace.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: Creacion,Se creo vendedor,2021-10-26
+oct 26, 2021 4:54:31 PM co.edu.uniquindio.marketplace.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: Creacion,Se creo vendedor,2021-10-26
+oct 26, 2021 4:55:45 PM co.edu.uniquindio.marketplace.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: Eliminacion,Se elimino vendedor,2021-10-26
+oct 26, 2021 4:56:18 PM co.edu.uniquindio.marketplace.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: Creacion,Se creo vendedor,2021-10-26
+oct 26, 2021 4:56:32 PM co.edu.uniquindio.marketplace.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: Creacion,Se creo vendedor,2021-10-26
+oct 26, 2021 4:56:46 PM co.edu.uniquindio.marketplace.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: Eliminacion,Se elimino vendedor,2021-10-26
+oct 26, 2021 4:59:20 PM co.edu.uniquindio.marketplace.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: Actualizacion,Se actualizo vendedor,2021-10-26
+oct 26, 2021 5:05:19 PM co.edu.uniquindio.marketplace.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: Actualizacion,Se actualizo vendedor,2021-10-26
+oct 26, 2021 5:06:58 PM co.edu.uniquindio.marketplace.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: Actualizacion,Se actualizo vendedor,2021-10-26
+oct 26, 2021 5:07:07 PM co.edu.uniquindio.marketplace.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: Eliminacion,Se elimino vendedor,2021-10-26
+oct 26, 2021 5:08:25 PM co.edu.uniquindio.marketplace.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: Creacion,Se creo vendedor,2021-10-26
+oct 26, 2021 5:09:21 PM co.edu.uniquindio.marketplace.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: Eliminacion,Se elimino vendedor,2021-10-26
